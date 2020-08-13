@@ -6,3 +6,4 @@ print("hello world")
 print("testing")
 
 A = 1 + 2
+print(A)
