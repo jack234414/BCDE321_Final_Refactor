@@ -10,12 +10,53 @@ import os
 
 # Edan coding area
 
-
-#------------------------------Sexy function1------------------------------
-
-
-#------------------------------Sexy function2------------------------------
-
+# from cmd import Cmd
+# import argparse
+# from converter import Converter
+# from json_loader import JsonLoader
+#
+#
+# class CommandLineInterface(Cmd):
+#
+#     def __init__(self):
+#         super().__init__()
+#         self.prompt = ">>> "
+#         self.intro = "This program will generate a class diagram from your JavaScript source code. " \
+#                      "Type help for a list of commands."
+#         jloader = JsonLoader('help_file.json')
+#         try:
+#             jloader.open_file()
+#         except FileNotFoundError:
+#             print('There is no help file.')
+#         self.jloader = jloader
+#
+#     def do_extract_data(self, arg):
+#         con = Converter()
+#         con.visit(con.extract_data(con))
+#
+#
+#     def do_choose_system_type(self, arg):
+#         """ -w for Windows, -m for Mac"""
+#         if arg == "-w":
+#             print('Windows Selected')
+#         elif arg == "-m":
+#             print('Mac Selected')
+#
+#     def help_choose_system_type(self):
+#         print(self.jloader.get_help_text('choose_system_type'))
+#
+#     def do_exit(self):
+#         """Exit the program"""
+#         return True
+#
+#
+# if __name__ == '__main__':
+#     import sys
+#
+#     cli = CommandLineInterface()
+#     sys_exit_code = cli.cmdloop()
+#     print('Exiting with code: {!r}'.format(sys_exit_code))
+#     sys.exit(sys_exit_code)
 
 # Jack coding area
 
