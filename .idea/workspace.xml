@@ -1,8 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa1e3366-3392-474e-9dff-9ab5e7828354" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="fa1e3366-3392-474e-9dff-9ab5e7828354" name="Default Changelist" comment="Added Edan work - Can print classes, working on attributes etc">
+      <change afterPath="$PROJECT_DIR$/help_file.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json_loader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/BCDE321_Assignment2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BCDE321_Assignment2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/converter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,11 +53,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JupyterTrust" id="81c6f771-a8ad-40d3-94f5-8a63ddfa5822" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="736" />
-  </component>
   <component name="ProjectId" id="1gI8lK386pSxLaBuCyddqw7euRD" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -41,13 +61,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="azure" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main (1)">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="BCDE321_Assignment2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -70,7 +91,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="cmd" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="BCDE321_Assignment2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/BCDE321_Assignment2/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="BCDE321_Assignment2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -83,7 +126,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cmd.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Mrnoo\PycharmProjects\BCDE321_Assignment2\main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -92,6 +135,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main (1)" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -144,17 +192,37 @@
       <option name="project" value="LOCAL" />
       <updated>1597791789726</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added Edan work - Can print classes, working on attributes etc">
+      <created>1597832356963</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1597832356963</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Starting a py file in Github" />
     <MESSAGE value="New an element called A" />
     <MESSAGE value="a new" />
-    <option name="LAST_COMMIT_MESSAGE" value="a new" />
+    <MESSAGE value="Added Edan work - Can print classes, working on attributes etc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Edan work - Can print classes, working on attributes etc" />
   </component>
   <component name="WindowStateProjectService">
     <state x="240" y="56" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597791402498">
@@ -165,10 +233,35 @@
       <screen x="0" y="23" width="1280" height="736" />
     </state>
     <state x="216" y="23" key="CommitChangelistDialog2/0.23.1280.736@0.23.1280.736" timestamp="1597791789364" />
-    <state x="149" y="30" key="SettingsEditor" timestamp="1597791010953">
-      <screen x="0" y="23" width="1280" height="736" />
+    <state width="2539" height="710" key="GridCell.Tab.0.bottom" timestamp="1597877764679">
+      <screen x="0" y="0" width="2560" height="1410" />
     </state>
+    <state width="2539" height="710" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597877764679" />
+    <state width="2539" height="710" key="GridCell.Tab.0.center" timestamp="1597877764679">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="2539" height="710" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597877764679" />
+    <state width="2539" height="710" key="GridCell.Tab.0.left" timestamp="1597877764679">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="2539" height="710" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597877764679" />
+    <state width="2539" height="710" key="GridCell.Tab.0.right" timestamp="1597877764679">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="2539" height="710" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597877764679" />
+    <state x="298" y="13" key="SettingsEditor" timestamp="1597873870417">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="298" y="13" key="SettingsEditor/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597873870417" />
     <state x="149" y="30" key="SettingsEditor/0.23.1280.736@0.23.1280.736" timestamp="1597791010953" />
+    <state x="1097" y="619" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597873450270">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="1097" y="619" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597873450270" />
+    <state x="943" y="317" width="672" height="678" key="search.everywhere.popup" timestamp="1597875242703">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="943" y="317" width="672" height="678" key="search.everywhere.popup/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597875242703" />
   </component>
   <component name="masterDetails">
     <states>

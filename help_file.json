@@ -1,0 +1,17 @@
+{
+
+  "helpText": [
+
+    {
+      "functionName": "choose_system_type",
+      "helpText" : "Input -w for windows or -m for mac"
+    },
+
+    {
+      "functionName": "extract_data",
+      "helpText" : "This can load a cmd interface file and extract data from it"
+    }
+
+  ]
+
+}
