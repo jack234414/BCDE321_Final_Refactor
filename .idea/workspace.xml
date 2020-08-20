@@ -19,9 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa1e3366-3392-474e-9dff-9ab5e7828354" name="Default Changelist" comment="Added Edan work - Can print attributes and function names - changed cmd.py to main.py">
+    <list default="true" id="fa1e3366-3392-474e-9dff-9ab5e7828354" name="Default Changelist" comment="Added Edan work - Prints attributes correctly">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JStest1.js" beforeDir="false" afterPath="$PROJECT_DIR$/JStest1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/converter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -201,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597877897705</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added Edan work - Prints attributes correctly">
+      <created>1597888540728</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1597888540728</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,7 +231,8 @@
     <MESSAGE value="a new" />
     <MESSAGE value="Added Edan work - Can print classes, working on attributes etc" />
     <MESSAGE value="Added Edan work - Can print attributes and function names - changed cmd.py to main.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Edan work - Can print attributes and function names - changed cmd.py to main.py" />
+    <MESSAGE value="Added Edan work - Prints attributes correctly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Edan work - Prints attributes correctly" />
   </component>
   <component name="WindowStateProjectService">
     <state x="240" y="56" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597791402498">
@@ -236,31 +243,31 @@
       <screen x="0" y="23" width="1280" height="736" />
     </state>
     <state x="216" y="23" key="CommitChangelistDialog2/0.23.1280.736@0.23.1280.736" timestamp="1597791789364" />
-    <state width="2539" height="529" key="GridCell.Tab.0.bottom" timestamp="1597888164210">
+    <state width="2539" height="595" key="GridCell.Tab.0.bottom" timestamp="1597900971124">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2539" height="529" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597888164210" />
-    <state width="2539" height="529" key="GridCell.Tab.0.center" timestamp="1597888164209">
+    <state width="2539" height="595" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597900971124" />
+    <state width="2539" height="595" key="GridCell.Tab.0.center" timestamp="1597900971124">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2539" height="529" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597888164209" />
-    <state width="2539" height="529" key="GridCell.Tab.0.left" timestamp="1597888164209">
+    <state width="2539" height="595" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597900971124" />
+    <state width="2539" height="595" key="GridCell.Tab.0.left" timestamp="1597900971123">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2539" height="529" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597888164209" />
-    <state width="2539" height="529" key="GridCell.Tab.0.right" timestamp="1597888164210">
+    <state width="2539" height="595" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597900971123" />
+    <state width="2539" height="595" key="GridCell.Tab.0.right" timestamp="1597900971124">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2539" height="529" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597888164210" />
+    <state width="2539" height="595" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597900971124" />
     <state x="298" y="13" key="SettingsEditor" timestamp="1597873870417">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="298" y="13" key="SettingsEditor/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597873870417" />
     <state x="149" y="30" key="SettingsEditor/0.23.1280.736@0.23.1280.736" timestamp="1597791010953" />
-    <state x="1097" y="619" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597873450270">
+    <state x="1097" y="619" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597901118298">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="1097" y="619" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597873450270" />
+    <state x="1097" y="619" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597901118298" />
     <state x="943" y="317" width="672" height="678" key="search.everywhere.popup" timestamp="1597875242703">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
