@@ -19,15 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa1e3366-3392-474e-9dff-9ab5e7828354" name="Default Changelist" comment="Added Edan work - Can print classes, working on attributes etc">
-      <change afterPath="$PROJECT_DIR$/help_file.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/json_loader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/BCDE321_Assignment2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BCDE321_Assignment2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="fa1e3366-3392-474e-9dff-9ab5e7828354" name="Default Changelist" comment="Added Edan work - Can print attributes and function names - changed cmd.py to main.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JStest1.js" beforeDir="false" afterPath="$PROJECT_DIR$/JStest1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/converter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597832356963</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added Edan work - Can print attributes and function names - changed cmd.py to main.py">
+      <created>1597877897705</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1597877897705</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,7 +224,8 @@
     <MESSAGE value="New an element called A" />
     <MESSAGE value="a new" />
     <MESSAGE value="Added Edan work - Can print classes, working on attributes etc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Edan work - Can print classes, working on attributes etc" />
+    <MESSAGE value="Added Edan work - Can print attributes and function names - changed cmd.py to main.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Edan work - Can print attributes and function names - changed cmd.py to main.py" />
   </component>
   <component name="WindowStateProjectService">
     <state x="240" y="56" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597791402498">
@@ -233,22 +236,22 @@
       <screen x="0" y="23" width="1280" height="736" />
     </state>
     <state x="216" y="23" key="CommitChangelistDialog2/0.23.1280.736@0.23.1280.736" timestamp="1597791789364" />
-    <state width="2539" height="710" key="GridCell.Tab.0.bottom" timestamp="1597877764679">
+    <state width="2539" height="529" key="GridCell.Tab.0.bottom" timestamp="1597888164210">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2539" height="710" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597877764679" />
-    <state width="2539" height="710" key="GridCell.Tab.0.center" timestamp="1597877764679">
+    <state width="2539" height="529" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597888164210" />
+    <state width="2539" height="529" key="GridCell.Tab.0.center" timestamp="1597888164209">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2539" height="710" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597877764679" />
-    <state width="2539" height="710" key="GridCell.Tab.0.left" timestamp="1597877764679">
+    <state width="2539" height="529" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597888164209" />
+    <state width="2539" height="529" key="GridCell.Tab.0.left" timestamp="1597888164209">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2539" height="710" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597877764679" />
-    <state width="2539" height="710" key="GridCell.Tab.0.right" timestamp="1597877764679">
+    <state width="2539" height="529" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597888164209" />
+    <state width="2539" height="529" key="GridCell.Tab.0.right" timestamp="1597888164210">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2539" height="710" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597877764679" />
+    <state width="2539" height="529" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597888164210" />
     <state x="298" y="13" key="SettingsEditor" timestamp="1597873870417">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>

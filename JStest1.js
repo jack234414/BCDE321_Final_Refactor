@@ -60,7 +60,7 @@ class CycleLog { // eslint-disable-line no-unused-vars
         let allShortRides = [];
 		for (let aRide of this.allMyRides) {
 			if (aRide.distance <= 5) {
-				allShortRides.push(aRide);
+				allShortRides.push( );
 			}
 		}
 		return allShortRides;
@@ -188,23 +188,23 @@ class Ride { // eslint-disable-line no-unused-vars
     }
 
     // // FEATURE 10 - Validate Input
-    // finishedRide(inputFinished) {
-    //     if (inputFinished === true) {
-    //         return this.completed = true;
-    //     } else {
-    //         return this.completed = false;
-    //     }
-    // }
+     finishedRide(inputFinished) {
+         if (inputFinished === true) {
+             return this.completed = true;
+         } else {
+             return this.completed = false;
+         }
+     }
 
     // // FEATURE 11 - A caclulation within a part
-    // calculateDuration() {
-    //     let time = this.endTime.getTime() - this.startTime.getTime();
-    //     let minutes = time / 1000 / 60; // To get minute duration
-    //     // let seconds = time - minutes * 60; // To get second duration
-    //     // result += "Duration = " + minutes + " minutes " + seconds + " seconds";
-    //     this.duration = minutes;
-    //     return this.duration;
-    // }
+     calculateDuration() {
+         let time = this.endTime.getTime() - this.startTime.getTime();
+         let minutes = time / 1000 / 60; // To get minute duration
+         // let seconds = time - minutes * 60; // To get second duration
+         // result += "Duration = " + minutes + " minutes " + seconds + " seconds";
+         this.duration = minutes;
+         return this.duration;
+     }
 
     // FEATURE 11 - A caclulation within a part
     calculateKPH() {
