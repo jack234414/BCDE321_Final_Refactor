@@ -4,7 +4,6 @@ import re
 import os
 import pymysql
 from checkfiles import CheckDirectory
-# Wu, Chieh-Ming (Jimmy's work)
 
 
 class LinkDb:

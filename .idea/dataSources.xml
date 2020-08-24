@@ -5,7 +5,7 @@
       <driver-ref>azure.ms</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
-      <jdbc-url>jdbc:sqlserver://aratesting.database.windows.net:1433;database=JStoUML</jdbc-url>
+      <jdbc-url>jdbc:sqlserver://ara-db-test.database.windows.net:1433;database=UML_Resource</jdbc-url>
     </data-source>
   </component>
 </project>
