@@ -31,9 +31,10 @@ class CommandLineInterface(Cmd):
             print('There is no help file.')
         self.jloader = jloader
 
-    def do_extract_data(self, arg):
+    def do_uml(self, arg):
         con = Converter()
         con.visit(con.extract_data(con))
+        con.convert_to_dot()
 
     def do_choose_system_type(self, arg):
         """ -w for Windows, -m for Mac"""

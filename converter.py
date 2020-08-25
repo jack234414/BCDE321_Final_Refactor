@@ -11,6 +11,7 @@ class Converter(esprima.NodeVisitor):
         self._right_ele = []
         self._class_names = []
         self._class_methods = []
+        self._attributes = []
         self._dict_of_everything = {}
         self._index = 0
 
@@ -23,7 +24,6 @@ class Converter(esprima.NodeVisitor):
 
     def visit_ClassDeclaration(self, node):
         self._class_names.append(node.id.name)
-        print(self._class_names)
         self.generic_visit(node)
 
     def is_constructor(self, node):
@@ -35,9 +35,7 @@ class Converter(esprima.NodeVisitor):
     def visit_MethodDefinition(self, node):
         if self.is_constructor(node):
             self._class_methods = []
-            self._operator = []
-            self._prop_name = []
-            self._right_ele = []
+            self._attributes = []
             self._index += 1
             body = node.value.body.body
             self.set_class_attributes(body)
@@ -50,27 +48,43 @@ class Converter(esprima.NodeVisitor):
         class_values = {
             'classname': self._class_names[self._index - 1],
             'classmethod': self._class_methods,
-            'operator': self._operator,
-            'propname': self._prop_name,
-            'identifier': self._right_ele
+            'attributes': self._attributes
         }
         class_num = "class" + str(self._index)
         self._dict_of_everything[class_num] = class_values
 
-        print(self._dict_of_everything)
-
     def set_class_attributes(self, body):
         for key in body:
             expr = key.expression
-            self._operator.append(expr.operator)
-            self._prop_name.append(expr.left.property.name)
+            result = 'this.'
+            # self._attributes.append(expr.left.property.name)
+            result += expr.left.property.name
+            # self._attributes.append(expr.operator)
+            result += expr.operator
             if expr.right.type == 'ArrayExpression':
-                self._right_ele.append(expr.right.elements)
+                # self._attributes.append(expr.right.elements)
+                result += str(expr.right.elements)
             elif expr.right.type == 'Literal':
-                self._right_ele.append(expr.right.raw)
+                # self._attributes.append(expr.right.raw)
+                result += expr.right.raw
             else:
-                self._right_ele.append(expr.right.name)
+                # self._attributes.append(expr.right.name)
+                result += expr.right.name
+            self._attributes.append(result)
 
     def convert_to_dot(self):
         dot = Digraph(comment='UML Diagram')
-        dot.node()
+        for key in self._dict_of_everything:
+            class_info = self._dict_of_everything.get(key)
+            classname = class_info.get('classname')
+            methods = class_info.get('classmethod')
+            attributes = class_info.get('attributes')
+            dot.node(classname,
+                     "{{{classname}|{attributes}|{methods}}}".format(
+                         classname=classname,
+                         attributes="\l".join(attributes),
+                         methods="()\l".join(methods) + "()"
+                     ),
+                     shape="record",
+                     )
+        print(dot.source)
