@@ -5,7 +5,7 @@
 import os
 # import cmd
 # import re
-
+import visitorTest
 
 # Edan imports
 from cmd import Cmd
@@ -46,10 +46,15 @@ class CommandLineInterface(Cmd):
         """Exit the program"""
         return True
 
-    # Jack uncompleted coding
-    def do_read_js(self, arg):
+    def do_uml(self, arg):
         con = Converter()
         con.visit(con.extract_data(con))
+        con.convert_to_dot()
+
+    # Jack uncompleted coding
+    # def do_read_js(self, arg):
+
+
     def do_pwd(self, arg):
         print(os.getcwd())
 

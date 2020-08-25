@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa1e3366-3392-474e-9dff-9ab5e7828354" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extract_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mssql_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mycmd.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/read_js.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/visitorTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js-test/throw.js" beforeDir="false" afterPath="$PROJECT_DIR$/js-test/throw.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_example.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,11 +35,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JupyterTrust" id="81c6f771-a8ad-40d3-94f5-8a63ddfa5822" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="736" />
-  </component>
   <component name="ProjectId" id="1gI8lK386pSxLaBuCyddqw7euRD" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -59,11 +45,17 @@
     <property name="DatabaseDriversLRU" value="azure" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/js-test" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.vistor">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/js-test" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
     <configuration name="console.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$APPLICATION_CONFIG_DIR$/consoles/db/b69b963a-75b0-451c-9fcd-1b4ad0923975/console.sql" />
       <script-mode>FILE</script-mode>
@@ -92,6 +84,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="con" type="PythonConfigurationType" factoryName="Python">
+      <module name="BCDE321_Assignment2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/BCDE321_Assignment2/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/converter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="extract" type="PythonConfigurationType" factoryName="Python">
       <module name="BCDE321_Assignment2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -106,6 +120,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/extract_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python">
+      <module name="BCDE321_Assignment2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/BCDE321_Assignment2/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -180,7 +216,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="vistor" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="visitor" type="PythonConfigurationType" factoryName="Python">
       <module name="BCDE321_Assignment2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -193,7 +229,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/visitorTest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -204,11 +240,13 @@
     </configuration>
     <list>
       <item itemvalue="Database Script.console.sql" />
+      <item itemvalue="Python.visitor" />
       <item itemvalue="Python.extract" />
-      <item itemvalue="Python.vistor" />
+      <item itemvalue="Python.con" />
       <item itemvalue="Python.read-js" />
       <item itemvalue="Python.mssql" />
       <item itemvalue="Python.mycmd" />
+      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
@@ -241,7 +279,9 @@
       <workItem from="1598081497638" duration="188000" />
       <workItem from="1598150056904" duration="5496000" />
       <workItem from="1598231543430" duration="5015000" />
-      <workItem from="1598248338958" duration="11751000" />
+      <workItem from="1598248338958" duration="12539000" />
+      <workItem from="1598272971533" duration="6644000" />
+      <workItem from="1598347045973" duration="10920000" />
     </task>
     <task id="LOCAL-00001" summary="Starting a py file in Github">
       <created>1597289697361</created>
@@ -292,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597792955909</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Jack coding 24/08/20">
+      <created>1598270229318</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1598270229320</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,67 +350,73 @@
     <MESSAGE value="New an element called A" />
     <MESSAGE value="a new" />
     <MESSAGE value="a new test" />
-    <option name="LAST_COMMIT_MESSAGE" value="a new test" />
+    <MESSAGE value="Jack coding 24/08/20" />
+    <option name="LAST_COMMIT_MESSAGE" value="Jack coding 24/08/20" />
   </component>
   <component name="WindowStateProjectService">
     <state x="274" y="76" key="#Inspections" timestamp="1597793765553">
       <screen x="0" y="23" width="1280" height="736" />
     </state>
     <state x="274" y="76" key="#Inspections/0.23.1280.736@0.23.1280.736" timestamp="1597793765553" />
-    <state x="88" y="23" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598270196414">
-      <screen x="0" y="23" width="1280" height="737" />
-    </state>
-    <state x="88" y="23" width="1071" height="736" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.736@0.23.1280.736" timestamp="1598238116992" />
-    <state x="88" y="23" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.737@0.23.1280.737" timestamp="1598270196414" />
-    <state x="216" y="23" key="CommitChangelistDialog2" timestamp="1597792955642">
+    <state x="88" y="23" width="1071" height="737" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598353596110">
       <screen x="0" y="23" width="1280" height="736" />
     </state>
+    <state x="88" y="23" width="1071" height="736" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.736@0.23.1280.736" timestamp="1598353596110" />
+    <state x="175" y="23" width="1071" height="737" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.737@0.23.1280.737" timestamp="1598273425308" />
+    <state x="216" y="23" key="CommitChangelistDialog2" timestamp="1598270228926">
+      <screen x="0" y="23" width="1280" height="737" />
+    </state>
     <state x="216" y="23" key="CommitChangelistDialog2/0.23.1280.736@0.23.1280.736" timestamp="1597792955642" />
-    <state width="1238" height="190" key="GridCell.Tab.0.bottom" timestamp="1598269617668">
-      <screen x="0" y="23" width="1280" height="737" />
+    <state x="216" y="23" key="CommitChangelistDialog2/0.23.1280.737@0.23.1280.737" timestamp="1598270228926" />
+    <state width="1238" height="229" key="GridCell.Tab.0.bottom" timestamp="1598360176442">
+      <screen x="0" y="23" width="1280" height="736" />
     </state>
-    <state width="1238" height="190" key="GridCell.Tab.0.bottom/0.23.1280.736@0.23.1280.736" timestamp="1598248571067" />
-    <state width="1238" height="190" key="GridCell.Tab.0.bottom/0.23.1280.737@0.23.1280.737" timestamp="1598269617668" />
-    <state width="1238" height="190" key="GridCell.Tab.0.center" timestamp="1598269617667">
-      <screen x="0" y="23" width="1280" height="737" />
+    <state width="1238" height="229" key="GridCell.Tab.0.bottom/0.23.1280.736@0.23.1280.736" timestamp="1598360176442" />
+    <state width="1238" height="190" key="GridCell.Tab.0.bottom/0.23.1280.737@0.23.1280.737" timestamp="1598286485163" />
+    <state width="1238" height="229" key="GridCell.Tab.0.center" timestamp="1598360176441">
+      <screen x="0" y="23" width="1280" height="736" />
     </state>
-    <state width="1238" height="190" key="GridCell.Tab.0.center/0.23.1280.736@0.23.1280.736" timestamp="1598248571067" />
-    <state width="1238" height="190" key="GridCell.Tab.0.center/0.23.1280.737@0.23.1280.737" timestamp="1598269617667" />
-    <state width="1238" height="190" key="GridCell.Tab.0.left" timestamp="1598269617666">
-      <screen x="0" y="23" width="1280" height="737" />
+    <state width="1238" height="229" key="GridCell.Tab.0.center/0.23.1280.736@0.23.1280.736" timestamp="1598360176441" />
+    <state width="1238" height="190" key="GridCell.Tab.0.center/0.23.1280.737@0.23.1280.737" timestamp="1598286485162" />
+    <state width="1238" height="229" key="GridCell.Tab.0.left" timestamp="1598360176441">
+      <screen x="0" y="23" width="1280" height="736" />
     </state>
-    <state width="1238" height="190" key="GridCell.Tab.0.left/0.23.1280.736@0.23.1280.736" timestamp="1598248571063" />
-    <state width="1238" height="190" key="GridCell.Tab.0.left/0.23.1280.737@0.23.1280.737" timestamp="1598269617666" />
-    <state width="1238" height="190" key="GridCell.Tab.0.right" timestamp="1598269617667">
-      <screen x="0" y="23" width="1280" height="737" />
+    <state width="1238" height="229" key="GridCell.Tab.0.left/0.23.1280.736@0.23.1280.736" timestamp="1598360176441" />
+    <state width="1238" height="190" key="GridCell.Tab.0.left/0.23.1280.737@0.23.1280.737" timestamp="1598286485160" />
+    <state width="1238" height="229" key="GridCell.Tab.0.right" timestamp="1598360176442">
+      <screen x="0" y="23" width="1280" height="736" />
     </state>
-    <state width="1238" height="190" key="GridCell.Tab.0.right/0.23.1280.736@0.23.1280.736" timestamp="1598248571067" />
-    <state width="1238" height="190" key="GridCell.Tab.0.right/0.23.1280.737@0.23.1280.737" timestamp="1598269617667" />
-    <state width="1238" height="229" key="GridCell.Tab.1.bottom" timestamp="1598263068662">
-      <screen x="0" y="23" width="1280" height="737" />
+    <state width="1238" height="229" key="GridCell.Tab.0.right/0.23.1280.736@0.23.1280.736" timestamp="1598360176441" />
+    <state width="1238" height="190" key="GridCell.Tab.0.right/0.23.1280.737@0.23.1280.737" timestamp="1598286485162" />
+    <state width="1238" height="229" key="GridCell.Tab.1.bottom" timestamp="1598360176444">
+      <screen x="0" y="23" width="1280" height="736" />
     </state>
-    <state width="1238" height="229" key="GridCell.Tab.1.bottom/0.23.1280.737@0.23.1280.737" timestamp="1598263068662" />
-    <state width="1238" height="229" key="GridCell.Tab.1.center" timestamp="1598263068659">
-      <screen x="0" y="23" width="1280" height="737" />
+    <state width="1238" height="229" key="GridCell.Tab.1.bottom/0.23.1280.736@0.23.1280.736" timestamp="1598360176444" />
+    <state width="1238" height="229" key="GridCell.Tab.1.bottom/0.23.1280.737@0.23.1280.737" timestamp="1598271961489" />
+    <state width="1238" height="229" key="GridCell.Tab.1.center" timestamp="1598360176443">
+      <screen x="0" y="23" width="1280" height="736" />
     </state>
-    <state width="1238" height="229" key="GridCell.Tab.1.center/0.23.1280.737@0.23.1280.737" timestamp="1598263068659" />
-    <state width="1238" height="229" key="GridCell.Tab.1.left" timestamp="1598263068658">
-      <screen x="0" y="23" width="1280" height="737" />
+    <state width="1238" height="229" key="GridCell.Tab.1.center/0.23.1280.736@0.23.1280.736" timestamp="1598360176443" />
+    <state width="1238" height="229" key="GridCell.Tab.1.center/0.23.1280.737@0.23.1280.737" timestamp="1598271961489" />
+    <state width="1238" height="229" key="GridCell.Tab.1.left" timestamp="1598360176442">
+      <screen x="0" y="23" width="1280" height="736" />
     </state>
-    <state width="1238" height="229" key="GridCell.Tab.1.left/0.23.1280.737@0.23.1280.737" timestamp="1598263068658" />
-    <state width="1238" height="229" key="GridCell.Tab.1.right" timestamp="1598263068660">
-      <screen x="0" y="23" width="1280" height="737" />
+    <state width="1238" height="229" key="GridCell.Tab.1.left/0.23.1280.736@0.23.1280.736" timestamp="1598360176442" />
+    <state width="1238" height="229" key="GridCell.Tab.1.left/0.23.1280.737@0.23.1280.737" timestamp="1598271961489" />
+    <state width="1238" height="229" key="GridCell.Tab.1.right" timestamp="1598360176443">
+      <screen x="0" y="23" width="1280" height="736" />
     </state>
-    <state width="1238" height="229" key="GridCell.Tab.1.right/0.23.1280.737@0.23.1280.737" timestamp="1598263068660" />
+    <state width="1238" height="229" key="GridCell.Tab.1.right/0.23.1280.736@0.23.1280.736" timestamp="1598360176443" />
+    <state width="1238" height="229" key="GridCell.Tab.1.right/0.23.1280.737@0.23.1280.737" timestamp="1598271961489" />
     <state width="233" height="457" key="HiddenNamespacesPopup" timestamp="1597902440985">
       <screen x="0" y="23" width="1280" height="736" />
     </state>
     <state width="233" height="457" key="HiddenNamespacesPopup/0.23.1280.736@0.23.1280.736" timestamp="1597902440985" />
-    <state x="95" y="26" key="SettingsEditor" timestamp="1598259289129">
-      <screen x="0" y="23" width="1280" height="737" />
+    <state x="95" y="26" key="SettingsEditor" timestamp="1598355285499">
+      <screen x="0" y="23" width="1280" height="736" />
     </state>
-    <state x="95" y="26" key="SettingsEditor/0.23.1280.736@0.23.1280.736" timestamp="1598248398606" />
-    <state x="95" y="26" key="SettingsEditor/0.23.1280.737@0.23.1280.737" timestamp="1598259289129" />
+    <state x="95" y="26" key="SettingsEditor/0.23.1280.736@0.23.1280.736" timestamp="1598355285499" />
+    <state x="95" y="26" key="SettingsEditor/0.23.1280.737@0.23.1280.737" timestamp="1598283714390" />
     <state x="240" y="131" key="Vcs.Push.Dialog.v2" timestamp="1597793285766">
       <screen x="0" y="23" width="1280" height="736" />
     </state>
@@ -380,6 +433,10 @@
       <screen x="0" y="23" width="1280" height="736" />
     </state>
     <state x="441" y="312" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1280.736@0.23.1280.736" timestamp="1597793266152" />
+    <state x="314" y="76" width="915" height="717" key="dock-window-1" timestamp="1598351223084">
+      <screen x="0" y="23" width="1280" height="736" />
+    </state>
+    <state x="314" y="76" width="915" height="717" key="dock-window-1/0.23.1280.736@0.23.1280.736" timestamp="1598351223084" />
     <state x="305" y="84" width="670" height="676" key="search.everywhere.popup" timestamp="1598267242885">
       <screen x="0" y="23" width="1280" height="737" />
     </state>
@@ -390,8 +447,12 @@
     <SUITE FILE_PATH="coverage/BCDE321_Assignment2$cmd.coverage" NAME="cmd Coverage Results" MODIFIED="1597793524142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BCDE321_Assignment2$mssql.coverage" NAME="mssql Coverage Results" MODIFIED="1597858111362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BCDE321_Assignment2$extract.coverage" NAME="extract Coverage Results" MODIFIED="1598264681298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BCDE321_Assignment2$con.coverage" NAME="con Coverage Results" MODIFIED="1598351386673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BCDE321_Assignment2$read_js.coverage" NAME="read-js Coverage Results" MODIFIED="1598269138185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BCDE321_Assignment2$main.coverage" NAME="main Coverage Results" MODIFIED="1598269617654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BCDE321_Assignment2$main.coverage" NAME="main Coverage Results" MODIFIED="1598360072138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BCDE321_Assignment2$visitor.coverage" NAME="visitor Coverage Results" MODIFIED="1598351155266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BCDE321_Assignment2$vistor.coverage" NAME="con Coverage Results" MODIFIED="1598284951376" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BCDE321_Assignment2$mycmd.coverage" NAME="mycmd Coverage Results" MODIFIED="1598351704559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="masterDetails">
     <states>

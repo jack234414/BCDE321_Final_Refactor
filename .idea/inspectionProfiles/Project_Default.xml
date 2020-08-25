@@ -6,6 +6,7 @@
         <list>
           <option value="cmd.Cmd" />
           <option value="converter.Converter" />
+          <option value="list.get_edge_list" />
         </list>
       </option>
     </inspection_tool>
