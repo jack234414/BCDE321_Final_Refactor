@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa1e3366-3392-474e-9dff-9ab5e7828354" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/visitorTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="fa1e3366-3392-474e-9dff-9ab5e7828354" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +26,11 @@
         <option value="jack234414 &lt;jack234414@hotmail.com&gt;" />
         <option value="Jack Hu" />
       </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -282,6 +282,7 @@
       <workItem from="1598248338958" duration="12539000" />
       <workItem from="1598272971533" duration="6644000" />
       <workItem from="1598347045973" duration="10920000" />
+      <workItem from="1598395488470" duration="403000" />
     </task>
     <task id="LOCAL-00001" summary="Starting a py file in Github">
       <created>1597289697361</created>
@@ -339,7 +340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598270229320</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Jack updating code 25/08/20">
+      <created>1598395567669</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1598395567669</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,7 +359,8 @@
     <MESSAGE value="a new" />
     <MESSAGE value="a new test" />
     <MESSAGE value="Jack coding 24/08/20" />
-    <option name="LAST_COMMIT_MESSAGE" value="Jack coding 24/08/20" />
+    <MESSAGE value="Jack updating code 25/08/20" />
+    <option name="LAST_COMMIT_MESSAGE" value="Jack updating code 25/08/20" />
   </component>
   <component name="WindowStateProjectService">
     <state x="274" y="76" key="#Inspections" timestamp="1597793765553">
@@ -363,11 +372,11 @@
     </state>
     <state x="88" y="23" width="1071" height="736" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.736@0.23.1280.736" timestamp="1598353596110" />
     <state x="175" y="23" width="1071" height="737" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.737@0.23.1280.737" timestamp="1598273425308" />
-    <state x="216" y="23" key="CommitChangelistDialog2" timestamp="1598270228926">
+    <state x="216" y="23" key="CommitChangelistDialog2" timestamp="1598395567298">
       <screen x="0" y="23" width="1280" height="737" />
     </state>
     <state x="216" y="23" key="CommitChangelistDialog2/0.23.1280.736@0.23.1280.736" timestamp="1597792955642" />
-    <state x="216" y="23" key="CommitChangelistDialog2/0.23.1280.737@0.23.1280.737" timestamp="1598270228926" />
+    <state x="216" y="23" key="CommitChangelistDialog2/0.23.1280.737@0.23.1280.737" timestamp="1598395567298" />
     <state width="1238" height="229" key="GridCell.Tab.0.bottom" timestamp="1598360176442">
       <screen x="0" y="23" width="1280" height="736" />
     </state>
@@ -417,10 +426,11 @@
     </state>
     <state x="95" y="26" key="SettingsEditor/0.23.1280.736@0.23.1280.736" timestamp="1598355285499" />
     <state x="95" y="26" key="SettingsEditor/0.23.1280.737@0.23.1280.737" timestamp="1598283714390" />
-    <state x="240" y="131" key="Vcs.Push.Dialog.v2" timestamp="1597793285766">
+    <state x="240" y="131" key="Vcs.Push.Dialog.v2" timestamp="1598395843290">
       <screen x="0" y="23" width="1280" height="736" />
     </state>
-    <state x="240" y="131" key="Vcs.Push.Dialog.v2/0.23.1280.736@0.23.1280.736" timestamp="1597793285766" />
+    <state x="240" y="131" key="Vcs.Push.Dialog.v2/0.23.1280.736@0.23.1280.736" timestamp="1598395843290" />
+    <state x="240" y="131" key="Vcs.Push.Dialog.v2/0.23.1280.737@0.23.1280.737" timestamp="1598395595005" />
     <state x="526" y="275" width="337" height="232" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1597902385105">
       <screen x="0" y="23" width="1280" height="736" />
     </state>
@@ -429,10 +439,11 @@
       <screen x="0" y="23" width="1280" height="736" />
     </state>
     <state x="577" y="341" key="com.intellij.database.run.ParametersPanel.Standalone/0.23.1280.736@0.23.1280.736" timestamp="1597793788921" />
-    <state x="441" y="312" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597793266152">
-      <screen x="0" y="23" width="1280" height="736" />
+    <state x="441" y="312" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598395644727">
+      <screen x="0" y="23" width="1280" height="737" />
     </state>
     <state x="441" y="312" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1280.736@0.23.1280.736" timestamp="1597793266152" />
+    <state x="441" y="312" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1280.737@0.23.1280.737" timestamp="1598395644727" />
     <state x="314" y="76" width="915" height="717" key="dock-window-1" timestamp="1598351223084">
       <screen x="0" y="23" width="1280" height="736" />
     </state>
