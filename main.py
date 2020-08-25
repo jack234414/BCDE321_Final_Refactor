@@ -6,6 +6,7 @@ import os
 # import cmd
 # import re
 import visitorTest
+from read_js import Read_js
 
 # Edan imports
 from cmd import Cmd
@@ -52,8 +53,9 @@ class CommandLineInterface(Cmd):
         con.convert_to_dot()
 
     # Jack uncompleted coding
-    # def do_read_js(self, arg):
-
+    def do_read_js(self, arg):
+        chk = Read_js()
+        chk.check_file_type(arg)
 
     def do_pwd(self, arg):
         print(os.getcwd())

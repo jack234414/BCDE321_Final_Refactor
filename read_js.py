@@ -3,7 +3,7 @@
 import os
 import re
 
-class read_js:
+class Read_js:
 
     def __init__(self):
         self._fucntion_name = []
@@ -33,13 +33,13 @@ class read_js:
         # print("Original output" + '\n' + source)
         # test1 = ' '.join(source.split())
         # test2 = re.sub(re.compile("//.*?\n"), "", test1)
-        print(source)
+        # print(source)
 
         function = re.findall(r'function\s\w+', source, re.S) + re.findall(r'function\s\w+', source, re.S)
         var = re.findall(r'var\s\w+', source, re.S) + re.findall(r'const\s\w+', source, re.S) + re.findall(r'let\s\w+', source, re.S)
 
-        print(function)
-        print(var)
+        # print(function)
+        # print(var)
 
         for obj in function:
             function_all.append(obj.lstrip('function'))
@@ -50,7 +50,7 @@ class read_js:
             var_all.append(re.sub('var|const|let| ', '', obj))
             # var_all.append(obj.lstrip('var' or 'const' or 'let'))
 
-        print(var_all)
+        # print(var_all)
         # print(type(var_all))
 
         # file1 = open("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/js-test/throw.js").read()
@@ -84,15 +84,15 @@ class read_js:
         # print(var_all)
 
 
-if __name__ == '__main__':
-    a = read_js()
-    a.check_file_type("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/js-test/breakpoints.js")
-    a.check_file_type("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/js-test/breakpoints.mp3")
-    a.check_file_type("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/js-test/")
-    a.check_file_type("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/Bar.py")
-    # a.check_file_type("JStest1.js")
-
-    print("=" * 100)
-    a.get_data("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/JStest1.js")
+# if __name__ == '__main__':
+#     a = read_js()
+#     a.check_file_type("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/js-test/breakpoints.js")
+#     a.check_file_type("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/js-test/breakpoints.mp3")
+#     a.check_file_type("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/js-test/")
+#     a.check_file_type("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/Bar.py")
+#     # a.check_file_type("JStest1.js")
+#
+#     print("=" * 100)
+#     a.get_data("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/JStest1.js")
 
 
