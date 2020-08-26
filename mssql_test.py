@@ -18,35 +18,35 @@ class MSSQL:
     def connection(self, connection):
         self.__connection = connection
 
-    async def create_connection(self, connection_string):
+    def create_connection(self, connection_string):
         self.__connection = pyodbc.connect(connection_string)
         print("Connection established...")
 
     def close_connection(self):
         self.__connection.close()
 
-    async def create_cursor(self):
-        self.__cursor = await self.__connection.cursor()
+    def create_cursor(self):
+        self.__cursor = self.__connection.cursor()
 
-    async def close_cursor(self):
-        await self.__cursor.close()
+    def close_cursor(self):
+        self.__cursor.close()
 
-    async def process_query(self, query):
-        await self.__cursor.execute(query)
+    def process_query(self, query):
+        self.__cursor.execute(query)
         return f'Query "{query}" processed!'
 
-    async def insert_records(self, query, data):
-        return await self.__cursor.executemany(query, data)
+    def insert_records(self, query, data):
+        return self.__cursor.executemany(query, data)
 
-    async def fetch_all_records(self, query):
-        await self.process_query(query)
-        return await self.__cursor.fetchall()
+    def fetch_all_records(self, query):
+        self.process_query(query)
+        return self.__cursor.fetchall()
 
-    async def fetch_one(self, query):
-        await self.process_query(query)
-        return await self.__cursor.fetchone()
+    def fetch_one(self, query):
+        self.process_query(query)
+        return self.__cursor.fetchone()
 
-async def testing_connection():
+def testing_connection():
     connection_string = "Driver={ODBC Driver 17 for SQL Server};" \
                         "Server=tcp:ara-db-test.database.windows.net,1433;" \
                         "Database=UML_Resource;" \
@@ -57,16 +57,15 @@ async def testing_connection():
                         "Connection Timeout=30;"
     mssql = MSSQL()
     try:
-
-        await mssql.create_connection(connection_string)
+        mssql.create_connection(connection_string)
         print("connection build successfully")
 
     except pyodbc.Error as err:
         sqlstate = err.args[1]
         print(sqlstate)
 
-async def main():
-    await testing_connection()
+def main():
+    testing_connection()
 
 if __name__ == "__main__":
     loop = asyncio.get_event_loop()
@@ -77,6 +76,7 @@ if __name__ == "__main__":
     connection_string = "Driver={ODBC Driver 17 for SQL Server};Server=tcp:ara-db-test.database.windows.net,1433;Database=UML_Resource;Uid=ara-admin;Pwd=Test1234;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
     con = pyodbc.connect(connection_string)
     print(con)
+
 
     query_I = "INSERT INTO dbo.js_Input (class_name, function_name, var_num) VALUES (?, ?, ?);"
     query_S = "SELECT * FROM dbo.js_Input"

@@ -9,6 +9,7 @@ import os
 import visitorTest
 from read_js import Read_js
 from mssql_test import MSSQL, main
+import pyodbc
 
 # Edan imports
 from cmd import Cmd
@@ -70,13 +71,49 @@ class CommandLineInterface(Cmd):
         print(result)
 
     def do_db_select_all(self, arg):
-        loop = asyncio.get_event_loop()
-        result = loop.run_until_complete((MSSQL.fetch_all_records("SELECT * FROM dbo.js_Input")))
-        print(result)
+        db_select_all()
 
+def db_select_all():
+    conn = MSSQL()
+    connection_string = "Driver={ODBC Driver 17 for SQL Server};" \
+                        "Server=tcp:ara-db-test.database.windows.net,1433;" \
+                        "Database=UML_Resource;" \
+                        "Uid=ara-admin;" \
+                        "Pwd=Test1234;" \
+                        "Encrypt=yes;" \
+                        "TrustServerCertificate=no;" \
+                        "Connection Timeout=30;"
+    try:
+        conn.create_connection(connection_string)
+        print("connection build successfully")
 
+    except Exception as err:
 
-    # def
+        print(err)
+
+    else:
+        conn.create_cursor()
+        sql = "SELECT * FROM dbo.js_Input"
+        conn.process_query(sql)
+
+        # row = cursor.fetch_one()
+        # while row:
+        #     print(str(row[0]) + " " + str(row[1]))
+        #     row = cursor.fetch_one(sql)
+        print("Query " + sql + " is processing...")
+
+        print(conn.process_query(sql))
+
+        conn.create_cursor()
+        # row = conn.fetch_one(sql)
+        for row in conn.fetch_all_records(sql):
+            print(row)
+        # while row:
+        #     print (str(row[0]) + " | " + str(row[1]) + " | " + str(row[2]))
+        #     row = conn.fetchone()
+
+        conn.close_cursor()
+        conn.close_connection()
 
 
 if __name__ == '__main__':

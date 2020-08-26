@@ -7,6 +7,7 @@
           <option value="cmd.Cmd" />
           <option value="converter.Converter" />
           <option value="list.get_edge_list" />
+          <option value="main.await" />
         </list>
       </option>
     </inspection_tool>
