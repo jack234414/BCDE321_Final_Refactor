@@ -51,9 +51,20 @@ class CommandLineInterface(Cmd):
         return True
 
     def do_uml(self, arg):
-        con = Converter()
-        con.visit(con.extract_data(con))
-        con.convert_to_dot()
+        try:
+            raw_data = arg.split()
+            input_file = raw_data[0]
+            Read_js().check_file_type(input_file)
+
+            con = Converter()
+            con.load_data(input_file)
+            con.visit(con.extract_data(con))
+            con.convert_to_dot()
+
+        except Exception as err:
+            print(err)
+
+
 
 
 
@@ -100,7 +111,6 @@ def db_select_all():
         # while row:
         #     print(str(row[0]) + " " + str(row[1]))
         #     row = cursor.fetch_one(sql)
-        print("Query " + sql + " is processing...")
 
         print(conn.process_query(sql))
 

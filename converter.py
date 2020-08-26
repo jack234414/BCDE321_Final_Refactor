@@ -10,7 +10,7 @@ import pydot
 import pyparsing
 import json
 from read_js import Read_js
-
+from abc import ABCMeta, abstractmethod
 
 class Converter(esprima.NodeVisitor):
     def __init__(self):
@@ -24,10 +24,15 @@ class Converter(esprima.NodeVisitor):
         self._attributes = []
         self._dict_of_everything = {}
         self._index = 0
+        self.input_file = ""
+
+    def load_data(self, input_file):
+        self.input_file = input_file
+        return input_file
 
     def extract_data(self, con_class):
         filecontents = ""
-        with open("JStest1.js", 'r') as f:
+        with open(self.input_file, 'r') as f:
             for line in f:
                 filecontents += line
         return esprima.parseScript(filecontents, delegate=con_class)

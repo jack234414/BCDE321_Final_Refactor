@@ -13,8 +13,12 @@ class Read_js:
         if os.path.exists(input_file):
             if os.path.isfile(input_file):
                 work_dir = os.path.dirname(input_file)
-                file = input_file[len(work_dir)+1:]
+                if input_file.startswith('/'):
+                    file = input_file[len(work_dir)+1:]
+                else:
+                    file = input_file[len(work_dir):]
                 if file.endswith('.js'):
+                    # return file
                     print("The current directory is: " + work_dir + "\n" +
                           "Your selected js file is: " + file)
                     # return "The current directory is: " + work_dir + "\n" + \
@@ -24,7 +28,7 @@ class Read_js:
             else:
                 print("You might select a wrong path(i.e. a directory path), please re-enter a path of the js file you want to input")
         else:
-            print("Your input file is not existed")
+            print("You did not input any path or your input file is not existed")
 
     def get_data(self, input_file):
         function_all = []
