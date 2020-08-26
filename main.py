@@ -2,11 +2,13 @@
 # -*- coding:utf-8 -*-
 
 # Jack imports
+import asyncio
 import os
 # import cmd
 # import re
 import visitorTest
 from read_js import Read_js
+from mssql_test import MSSQL, main
 
 # Edan imports
 from cmd import Cmd
@@ -52,6 +54,8 @@ class CommandLineInterface(Cmd):
         con.visit(con.extract_data(con))
         con.convert_to_dot()
 
+
+
     # Jack uncompleted coding
     def do_read_js(self, arg):
         chk = Read_js()
@@ -59,6 +63,20 @@ class CommandLineInterface(Cmd):
 
     def do_pwd(self, arg):
         print(os.getcwd())
+
+    def do_db_connect(self, arg):
+        loop = asyncio.get_event_loop()
+        result = loop.run_until_complete(main())
+        print(result)
+
+    def do_db_select_all(self, arg):
+        loop = asyncio.get_event_loop()
+        result = loop.run_until_complete((MSSQL.fetch_all_records("SELECT * FROM dbo.js_Input")))
+        print(result)
+
+
+
+    # def
 
 
 if __name__ == '__main__':

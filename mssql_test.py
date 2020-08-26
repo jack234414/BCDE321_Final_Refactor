@@ -56,13 +56,14 @@ async def testing_connection():
                         "TrustServerCertificate=no;" \
                         "Connection Timeout=30;"
     mssql = MSSQL()
-
     try:
 
         await mssql.create_connection(connection_string)
+        print("connection build successfully")
 
-    except Exception as err:
-        print(err)
+    except pyodbc.Error as err:
+        sqlstate = err.args[1]
+        print(sqlstate)
 
 async def main():
     await testing_connection()
@@ -79,7 +80,7 @@ if __name__ == "__main__":
 
     query_I = "INSERT INTO dbo.js_Input (class_name, function_name, var_num) VALUES (?, ?, ?);"
     query_S = "SELECT * FROM dbo.js_Input"
-    params = [('class_name_test', 'function_name_test', 123)]
+    params = [('Cyclelog', 'addRide', 4)]
 
     cur = con.cursor()
     cur.executemany(query_I, params)
