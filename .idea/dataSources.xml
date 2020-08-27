@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="AzureSQL" uuid="c82aa95a-a953-4707-90db-6126e1b95910">
-      <driver-ref>azure.ms</driver-ref>
+    <data-source source="LOCAL" name="MySQL" uuid="175c83ac-1cca-4cd9-b796-d9e181151a5b">
+      <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
-      <jdbc-url>jdbc:sqlserver://ara-db-test.database.windows.net:1433;database=UML_Resource</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="@server.database.windows.net" uuid="10755a16-b911-4ddc-a372-fb568d3da0e3">
-      <driver-ref>azure.ms</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
-      <jdbc-url>jdbc:sqlserver://server.database.windows.net:1433</jdbc-url>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://ara-mysql.mysql.database.azure.com:3306/uml_resource</jdbc-url>
+      <driver-properties>
+        <property name="serverTimezone" value="Pacific/Auckland" />
+      </driver-properties>
     </data-source>
   </component>
 </project>

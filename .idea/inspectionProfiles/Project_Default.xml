@@ -8,6 +8,7 @@
           <option value="converter.Converter" />
           <option value="list.get_edge_list" />
           <option value="main.await" />
+          <option value="mysql.connector" />
         </list>
       </option>
     </inspection_tool>
