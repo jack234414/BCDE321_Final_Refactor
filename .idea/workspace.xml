@@ -20,10 +20,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa1e3366-3392-474e-9dff-9ab5e7828354" name="Default Changelist" comment="Added Edan work - Adds class names, methods and constructor attributes into a dict">
+    <list default="true" id="fa1e3366-3392-474e-9dff-9ab5e7828354" name="Default Changelist" comment="Added Edan work - converts dict to a dot file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/converter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help_file.json" beforeDir="false" afterPath="$PROJECT_DIR$/help_file.json" afterDir="false" />
 =======
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
@@ -442,7 +442,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597901177469</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added Edan work - converts dict to a dot file">
+      <created>1598355700303</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1598355700303</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
 =======
     <task id="LOCAL-00006" summary="a new test">
       <created>1597792879732</created>
@@ -535,7 +542,8 @@
     <MESSAGE value="Added Edan work - Can print attributes and function names - changed cmd.py to main.py" />
     <MESSAGE value="Added Edan work - Prints attributes correctly" />
     <MESSAGE value="Added Edan work - Adds class names, methods and constructor attributes into a dict" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Edan work - Adds class names, methods and constructor attributes into a dict" />
+    <MESSAGE value="Added Edan work - converts dict to a dot file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Edan work - converts dict to a dot file" />
 =======
     <MESSAGE value="a new test" />
     <MESSAGE value="Jack coding 24/08/20" />
@@ -646,31 +654,31 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="1060" y="460" key="FileChooserDialogImpl/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1598347147711" />
-    <state width="1256" height="464" key="GridCell.Tab.0.bottom" timestamp="1598355561233">
+    <state width="2539" height="464" key="GridCell.Tab.0.bottom" timestamp="1598584184023">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1256" height="464" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1598355561233" />
-    <state width="1256" height="464" key="GridCell.Tab.0.center" timestamp="1598355561233">
+    <state width="2539" height="464" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1598584184023" />
+    <state width="2539" height="464" key="GridCell.Tab.0.center" timestamp="1598584184023">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1256" height="464" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1598355561233" />
-    <state width="1256" height="464" key="GridCell.Tab.0.left" timestamp="1598355561232">
+    <state width="2539" height="464" key="GridCell.Tab.0.center/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1598584184023" />
+    <state width="2539" height="464" key="GridCell.Tab.0.left" timestamp="1598584184023">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1256" height="464" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1598355561232" />
-    <state width="1256" height="464" key="GridCell.Tab.0.right" timestamp="1598355561233">
+    <state width="2539" height="464" key="GridCell.Tab.0.left/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1598584184023" />
+    <state width="2539" height="464" key="GridCell.Tab.0.right" timestamp="1598584184023">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1256" height="464" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1598355561233" />
+    <state width="2539" height="464" key="GridCell.Tab.0.right/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1598584184023" />
     <state x="298" y="13" key="SettingsEditor" timestamp="1597873870417">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="298" y="13" key="SettingsEditor/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1597873870417" />
     <state x="149" y="30" key="SettingsEditor/0.23.1280.736@0.23.1280.736" timestamp="1597791010953" />
-    <state x="872" y="438" key="Vcs.Push.Dialog.v2" timestamp="1598251824562">
+    <state x="872" y="438" key="Vcs.Push.Dialog.v2" timestamp="1598356434531">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="872" y="438" key="Vcs.Push.Dialog.v2/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1598251824562" />
+    <state x="872" y="438" key="Vcs.Push.Dialog.v2/0.0.2560.1410/-1920.116.1920.1050@0.0.2560.1410" timestamp="1598356434531" />
     <state x="1097" y="619" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598346936800">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>

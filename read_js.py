@@ -3,6 +3,7 @@
 import os
 import re
 
+
 class Read_js:
 
     def __init__(self):

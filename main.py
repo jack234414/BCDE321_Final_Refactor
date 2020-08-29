@@ -1,6 +1,7 @@
 #!/usr/local/bin/Python3.6
 # -*- coding:utf-8 -*-
 
+
 # import packages
 
 # import cmd
@@ -8,20 +9,16 @@
 # import os
 
 
-# Edan coding area
 # Jack imports
 import asyncio
 import os
 # import cmd
 # import re
-import visitorTest
 from read_js import Read_js
 from mysql import MySQL, main1, main2, main3
-import pyodbc
 
 # Edan imports
 from cmd import Cmd
-# import argparse  # currently not using argparse
 from converter import Converter
 from json_loader import JsonLoader
 
@@ -30,6 +27,7 @@ class CommandLineInterface(Cmd):
 
     def __init__(self):
         super().__init__()
+        self.con = Converter()
         self.prompt = ">>> "
         self.intro = "This program will generate a class diagram from your JavaScript source code. " \
                      "Type help for a list of commands."
@@ -40,14 +38,11 @@ class CommandLineInterface(Cmd):
             print('There is no help file.')
         self.jloader = jloader
 
-    def do_uml(self, arg):
-        con = Converter()
-        con.visit(con.extract_data(con))
-        con.convert_to_dot()
+    def default(self, arg):
+        print(arg, 'is an incorrect command, type help to see the command list')
 
-    def do_extract_data(self, arg):
-        con = Converter()
-        con.visit(con.extract_data(con))
+    def do_create_pickle(self, arg):
+        self.con.make_pickle()
 
     def do_choose_system_type(self, arg):
         """ -w for Windows, -m for Mac"""
@@ -69,13 +64,12 @@ class CommandLineInterface(Cmd):
             input_file = raw_data[0]
             Read_js().check_file_type(input_file)
 
-            con = Converter()
-            con.load_data(input_file)
-            con.visit(con.extract_data(con))
-            con.convert_to_dot()
+            self.con.load_data(input_file)
+            self.con.visit(self.con.extract_data(self.con))
+            self.con.convert_to_dot()
 
-        except Exception as err:
-            print(err)
+        except Exception as e:
+            print(e)
 
 
 
@@ -120,14 +114,12 @@ class CommandLineInterface(Cmd):
         # finally:
         #     loop.close()
 
-
 if __name__ == '__main__':
     import sys
 
     cli = CommandLineInterface()
     sys_exit_code = cli.cmdloop()
     print('Exiting with code: {!r}'.format(sys_exit_code))
-
     sys.exit(sys_exit_code)
 
 # Jack coding area
@@ -173,5 +165,3 @@ if __name__ == '__main__':
 #     for i in imp:
 #         j = i.strip('var')
 #         imp_arr.append(j)
-    sys.exit(sys_exit_code)
-

@@ -8,8 +8,8 @@
     },
 
     {
-      "functionName": "extract_data",
-      "helpText" : "This can load a cmd interface file and extract data from it"
+      "functionName": "uml",
+      "helpText" : "This will translate the given Javascript file into a UML digram"
     }
 
   ]

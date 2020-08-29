@@ -1,22 +1,12 @@
 import esprima
-from graphviz import Digraph
-
-import json
-import visitor
 from graphviz import Digraph, Source
-import astpretty
-import pygraphviz as pgv
-import os
-import subprocess
-import pydot
-import pyparsing
-import json
-from read_js import Read_js
-from abc import ABCMeta, abstractmethod
+from pickler import Pickler
+
 
 class Converter(esprima.NodeVisitor):
     def __init__(self):
         # Initialize property
+        self.input_file = None
         self._operator = []
         self._obj_type = []
         self._prop_name = []
@@ -74,9 +64,10 @@ class Converter(esprima.NodeVisitor):
             expr = key.expression
             result = 'this.'
             # self._attributes.append(expr.left.property.name)
-            result += expr.left.property.name
-            if expr.left != None:
+
+            if expr.left is not None:
                 result += expr.left.property.name
+
             # self._attributes.append(expr.operator)
             result += expr.operator
             if expr.right.type == 'ArrayExpression':
@@ -97,14 +88,22 @@ class Converter(esprima.NodeVisitor):
             classname = class_info.get('classname')
             methods = class_info.get('classmethod')
             attributes = class_info.get('attributes')
-            dot.node(classname, '{{{classname}|{attributes}|{methods}}}'.format(
-                classname=classname,
-                attributes='\l'.join(attributes),
-                methods='()\l'.join(methods) + '()'), shape='record',)
-        print(dot.source)
-
-        print("=" * 100)
-        print(self._dict_of_everything)
+            dot.node(classname,
+                     "{{{classname}|{attributes}|{methods}}}".format(
+                         classname=classname,
+                         attributes="\l".join(attributes),
+                         methods="()\l".join(methods) + "()"
+                     ),
+                     shape="record",
+                     )
         s = Source(dot.source, filename="test.gv", format="png")
         s.view()
+
+    def make_pickle(self):
+        pickle = Pickler()
+        try:
+            pickle.serialise(self._dict_of_everything)
+        except FileNotFoundError as e:
+            print(e)
+
 
