@@ -1,8 +1,6 @@
 import esprima
-<<<<<<< HEAD
 from graphviz import Digraph
 
-=======
 import json
 import visitor
 from graphviz import Digraph, Source
@@ -15,7 +13,6 @@ import pyparsing
 import json
 from read_js import Read_js
 from abc import ABCMeta, abstractmethod
->>>>>>> readJS_test
 
 class Converter(esprima.NodeVisitor):
     def __init__(self):
@@ -29,13 +26,6 @@ class Converter(esprima.NodeVisitor):
         self._attributes = []
         self._dict_of_everything = {}
         self._index = 0
-<<<<<<< HEAD
-
-    def extract_data(self, con_class):
-        filecontents = ""
-        with open("JStest1.js", 'r') as f:
-=======
-        self.input_file = ""
 
     def load_data(self, input_file):
         self.input_file = input_file
@@ -44,7 +34,6 @@ class Converter(esprima.NodeVisitor):
     def extract_data(self, con_class):
         filecontents = ""
         with open(self.input_file, 'r') as f:
->>>>>>> readJS_test
             for line in f:
                 filecontents += line
         return esprima.parseScript(filecontents, delegate=con_class)
@@ -85,12 +74,9 @@ class Converter(esprima.NodeVisitor):
             expr = key.expression
             result = 'this.'
             # self._attributes.append(expr.left.property.name)
-<<<<<<< HEAD
             result += expr.left.property.name
-=======
             if expr.left != None:
                 result += expr.left.property.name
->>>>>>> readJS_test
             # self._attributes.append(expr.operator)
             result += expr.operator
             if expr.right.type == 'ArrayExpression':
@@ -111,17 +97,6 @@ class Converter(esprima.NodeVisitor):
             classname = class_info.get('classname')
             methods = class_info.get('classmethod')
             attributes = class_info.get('attributes')
-<<<<<<< HEAD
-            dot.node(classname,
-                     "{{{classname}|{attributes}|{methods}}}".format(
-                         classname=classname,
-                         attributes="\l".join(attributes),
-                         methods="()\l".join(methods) + "()"
-                     ),
-                     shape="record",
-                     )
-        print(dot.source)
-=======
             dot.node(classname, '{{{classname}|{attributes}|{methods}}}'.format(
                 classname=classname,
                 attributes='\l'.join(attributes),
@@ -133,5 +108,3 @@ class Converter(esprima.NodeVisitor):
         s = Source(dot.source, filename="test.gv", format="png")
         s.view()
 
-
->>>>>>> readJS_test

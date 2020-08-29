@@ -1,7 +1,6 @@
 #!/usr/local/bin/Python3.6
 # -*- coding:utf-8 -*-
 
-<<<<<<< HEAD
 # import packages
 
 # import cmd
@@ -10,7 +9,6 @@
 
 
 # Edan coding area
-=======
 # Jack imports
 import asyncio
 import os
@@ -20,7 +18,6 @@ import visitorTest
 from read_js import Read_js
 from mysql import MySQL, main1, main2, main3
 import pyodbc
->>>>>>> readJS_test
 
 # Edan imports
 from cmd import Cmd
@@ -43,16 +40,14 @@ class CommandLineInterface(Cmd):
             print('There is no help file.')
         self.jloader = jloader
 
-<<<<<<< HEAD
     def do_uml(self, arg):
         con = Converter()
         con.visit(con.extract_data(con))
         con.convert_to_dot()
-=======
+
     def do_extract_data(self, arg):
         con = Converter()
         con.visit(con.extract_data(con))
->>>>>>> readJS_test
 
     def do_choose_system_type(self, arg):
         """ -w for Windows, -m for Mac"""
@@ -68,8 +63,6 @@ class CommandLineInterface(Cmd):
         """Exit the program"""
         return True
 
-<<<<<<< HEAD
-=======
     def do_uml(self, arg):
         try:
             raw_data = arg.split()
@@ -127,7 +120,6 @@ class CommandLineInterface(Cmd):
         # finally:
         #     loop.close()
 
->>>>>>> readJS_test
 
 if __name__ == '__main__':
     import sys
@@ -135,7 +127,7 @@ if __name__ == '__main__':
     cli = CommandLineInterface()
     sys_exit_code = cli.cmdloop()
     print('Exiting with code: {!r}'.format(sys_exit_code))
-<<<<<<< HEAD
+
     sys.exit(sys_exit_code)
 
 # Jack coding area
@@ -181,6 +173,5 @@ if __name__ == '__main__':
 #     for i in imp:
 #         j = i.strip('var')
 #         imp_arr.append(j)
-=======
     sys.exit(sys_exit_code)
->>>>>>> readJS_test
+
