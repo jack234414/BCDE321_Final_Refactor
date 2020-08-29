@@ -14,10 +14,8 @@ import asyncio
 import os
 # import cmd
 # import re
-import visitorTest
 from read_js import Read_js
 from mysql import MySQL, main1, main2, main3
-import pyodbc
 
 # Edan imports
 from cmd import Cmd
