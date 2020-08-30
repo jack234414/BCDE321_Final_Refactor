@@ -32,6 +32,7 @@ class CommandLineInterface(Cmd):
         self.intro = "This program will generate a class diagram from your JavaScript source code. " \
                      "Type help for a list of commands."
         jloader = JsonLoader('help_file.json')
+        # self.do_load_data("JSTest2.js")  # test
         try:
             jloader.open_file()
         except FileNotFoundError:
@@ -44,36 +45,45 @@ class CommandLineInterface(Cmd):
     def do_create_pickle(self, arg):
         self.con.make_pickle()
 
-    def do_choose_system_type(self, arg):
-        """ -w for Windows, -m for Mac"""
-        if arg == "-w":
-            print('Windows Selected')
-        elif arg == "-m":
-            print('Mac Selected')
-
-    def help_choose_system_type(self):
-        print(self.jloader.get_help_text('choose_system_type'))
+    def help_create_pickle(self):
+        print(self.jloader.get_help_text('create_pickle'))
 
     def do_exit(self):
-        """Exit the program"""
         return True
 
-    def do_uml(self, arg):
+    def help_exit(self):
+        print(self.jloader.get_help_text('exit'))
+
+    def do_load_data(self, arg):
         try:
             raw_data = arg.split()
             input_file = raw_data[0]
             Read_js().check_file_type(input_file)
 
             self.con.load_data(input_file)
-            self.con.visit(self.con.extract_data(self.con))
-            self.con.convert_to_dot()
-
         except Exception as e:
             print(e)
 
+    def help_load_data(self):
+        print(self.jloader.get_help_text('load_data'))
 
+    def do_extract_data(self, arg):
+        try:
+            self.con.visit(self.con.extract_data(self.con))
+        except Exception as e:
+            print(e)
 
+    def help_extract_data(self):
+        print(self.jloader.get_help_text('extract_data'))
 
+    def do_convert_to_uml(self, arg):
+        try:
+            self.con.convert_to_uml()
+        except Exception as e:
+            print(e)
+
+    def help_convert_to_uml(self):
+        print(self.jloader.get_help_text('convert_to_uml'))
 
     # Jack uncompleted coding
     def do_read_js(self, arg):

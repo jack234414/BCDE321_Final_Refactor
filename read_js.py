@@ -10,24 +10,30 @@ class Read_js:
         self._fucntion_name = []
         self._var_name = []
 
+    # Jacks work, Edan's try, assert/excepts
     def check_file_type(self, input_file):
         if os.path.exists(input_file):
-            if os.path.isfile(input_file):
+            try:
+                assert os.path.isfile(input_file)
                 work_dir = os.path.dirname(input_file)
                 if input_file.startswith('/'):
                     file = input_file[len(work_dir)+1:]
                 else:
                     file = input_file[len(work_dir):]
-                if file.endswith('.js'):
+                try:
+                    assert file.endswith('.js')
                     # return file
                     print("The current directory is: " + work_dir + "\n" +
                           "Your selected js file is: " + file)
                     # return "The current directory is: " + work_dir + "\n" + \
                     #        "Your selected js file is: " + file
-                else:
-                    print("Your input file is not a js file, please re-select")
-            else:
-                print("You might select a wrong path(i.e. a directory path), please re-enter a path of the js file you want to input")
+                except AssertionError:
+                    print(input_file + " is not a js file, please re-select")
+                    return
+            except AssertionError:
+                print("You might select a wrong path(i.e. a directory path), " 
+                      "please re-enter a path of the js file you want to input")
+                return
         else:
             print("You did not input any path or your input file is not existed")
 

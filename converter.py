@@ -1,9 +1,9 @@
-import esprima
+from esprima import NodeVisitor, parseScript
 from graphviz import Digraph, Source
 from pickler import Pickler
 
 
-class Converter(esprima.NodeVisitor):
+class Converter(NodeVisitor):
     def __init__(self):
         # Initialize property
         self.input_file = None
@@ -23,10 +23,15 @@ class Converter(esprima.NodeVisitor):
 
     def extract_data(self, con_class):
         filecontents = ""
-        with open(self.input_file, 'r') as f:
-            for line in f:
-                filecontents += line
-        return esprima.parseScript(filecontents, delegate=con_class)
+        try:
+            with open(self.input_file, 'r') as f:
+                for line in f:
+                    filecontents += line
+            data = parseScript(filecontents, delegate=con_class)
+            print('Data has been extracted')
+            return data
+        except Exception as e:
+            print('There was an error in the JavaScript file: ' + str(e))
 
     def visit_ClassDeclaration(self, node):
         self._class_names.append(node.id.name)
@@ -81,7 +86,7 @@ class Converter(esprima.NodeVisitor):
                 result += expr.right.name
             self._attributes.append(result)
 
-    def convert_to_dot(self):
+    def convert_to_uml(self):
         dot = Digraph(comment='UML Diagram')
         for key in self._dict_of_everything:
             class_info = self._dict_of_everything.get(key)
@@ -102,8 +107,9 @@ class Converter(esprima.NodeVisitor):
     def make_pickle(self):
         pickle = Pickler()
         try:
+            assert len(self._dict_of_everything.keys()) > 0
             pickle.serialise(self._dict_of_everything)
         except FileNotFoundError as e:
             print(e)
-
-
+        except AssertionError:
+            print('Dictionary is empty, try loading then extracting data first')

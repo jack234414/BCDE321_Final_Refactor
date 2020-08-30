@@ -3,13 +3,28 @@
   "helpText": [
 
     {
-      "functionName": "choose_system_type",
-      "helpText" : "Input -w for windows or -m for mac"
+      "functionName": "create_pickle",
+      "helpText" : "Creates a pickle of the provided JavaScript file's classes, attributes and methods \nSyntax: create_pickle"
     },
 
     {
-      "functionName": "uml",
-      "helpText" : "This will translate the given Javascript file into a UML digram"
+      "functionName": "load_data",
+      "helpText" : "Loads data from a provided Javascript file \nSyntax: load_data [file path]"
+    },
+
+    {
+      "functionName": "extract_data",
+      "helpText" : "Extracts data from loaded JavaScript file \nSyntax: extract_data"
+    },
+
+    {
+      "functionName": "convert_to_uml",
+      "helpText" : "Converts extracted data and displays image \nSyntax: convert_to_uml"
+    },
+
+    {
+      "functionName": "exit",
+      "helpText" : "Exits the program \nSyntax: exit"
     }
 
   ]
