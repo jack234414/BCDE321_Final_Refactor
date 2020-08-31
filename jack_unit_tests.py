@@ -7,12 +7,31 @@ from main import *
 
 
 class ExampleTest(unittest.TestCase):
-    """Jack unittest """
+    """Jack unittest"""
+
+
+    def setUp(self):
+        pass
+
     def test_read_js(self):
         text = "/Users/hadooper/PycharmProjects/BCDE321_Assignment2/JStest1.js"
         result = cli().do_read_js(text)
         self.assertTrue(result)
-    #
+
+    def test_load_js(self):
+        dc = ('ClassDiagram.png', 'TestClass.py')
+        self.assertTrue()
+
+    def test_check_table_false(self):
+        sd = ()
+        self.assertFalse((sd.check_table('testtable')))
+
+    def test_check_table_true(self):
+        sd = ()
+        sd.create_table('testtable')
+        self.assertTrue(sd.check_table('testtable'))
+        sd.delete_table('testtable')
+
     # def test_uml_diagram_fig(self):
     #     text = "/Users/jimmy/py/pythonClassProject2020/ppp_cmd.py -fig"
     #     result = CLI().do_uml_diagram(text)

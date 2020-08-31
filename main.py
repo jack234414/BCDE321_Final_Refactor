@@ -91,8 +91,14 @@ class CommandLineInterface(Cmd):
         chk = Read_js()
         chk.check_file_type(arg)
 
+    def help_read_js(self):
+        print(self.jloader.get_help_text('read_js'))
+
     def do_pwd(self, arg):
         print(os.getcwd())
+
+    def help_pwd(self):
+        print(self.jloader.get_help_text('pwd'))
 
     def do_db_connect(self, arg):
         loop = asyncio.get_event_loop()
@@ -102,6 +108,9 @@ class CommandLineInterface(Cmd):
         except Exception as e:
             print(e)
 
+    def help_db_connect(self):
+        print(self.jloader.get_help_text('db_connect'))
+
     def do_db_info(self, arg):
         loop = asyncio.get_event_loop()
         try:
@@ -109,6 +118,9 @@ class CommandLineInterface(Cmd):
             print(result)
         except Exception as e:
             print(e)
+
+    def help_db_info(self):
+        print(self.jloader.get_help_text('db_info'))
 
     def do_cls_info_select_all(self, arg):
         loop = asyncio.get_event_loop()
@@ -135,11 +147,20 @@ class CommandLineInterface(Cmd):
             print(e)
 
     def do_wavi(self, arg):
-        command = "wavi ./js-test uml-test.svg"
-        print(os.environ["PATH"])
-        print('\n')
-        print(wavi_path)
-        subprocess.run(command, cwd=dir_path, shell=True)
+        try:
+            raw_data = arg.split()
+            input_file = raw_data[0]
+
+            command = "wavi {0} uml-test.svg".format(input_file)
+            print("Your wavi directory is: " + wavi_path)
+            subprocess.run(command, cwd=dir_path, shell=True)
+
+        except Exception as e:
+            print(e)
+
+    def help_wavi(self):
+        print(self.jloader.get_help_text('wavi'))
+
 
 
 if __name__ == '__main__':
