@@ -323,7 +323,7 @@ async def testing_attr_all():
         print("Select all data from class_attr table...")
 
         table = BeautifulTable()
-        table.columns.header = ['id', 'method']
+        table.columns.header = ['id', 'attributes']
 
 
         my_row_list = []

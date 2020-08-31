@@ -43,13 +43,13 @@
     },
 
     {
-      "functionName": "wavi",
-      "helpText" : "Uses WAVI project to generate UML diagram \nSyntax: wavi [file path]"
+      "functionName": "table_select",
+      "helpText" : "To select a table you want to see with stored data \nSyntax: table_select [-options] \nOptions: \n-a: Select attributes table \n-m: Select methods table \n-i: Select all extracted class table"
     },
 
     {
-      "functionName": "cls_atr_select_all",
-      "helpText" : "Selects all class attribute to display \nSyntax: cls_atr_select_all"
+      "functionName": "wavi",
+      "helpText" : "Uses WAVI project to generate UML diagram \nSyntax: wavi [file path]"
     },
 
     {

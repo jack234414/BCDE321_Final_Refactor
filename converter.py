@@ -103,7 +103,7 @@ class Converter(NodeVisitor):
                      ),
                      shape="record",
                      )
-            print(class_info)
+            # print(class_info)
         dot.edge('CycleLog', 'Ride')
         s = Source(dot.source, filename="test.gv", format="png")
         s.view()

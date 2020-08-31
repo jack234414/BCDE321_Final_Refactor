@@ -17,7 +17,8 @@ from json_loader import JsonLoader
 os.environ["PATH"] += os.pathsep + './wavi-master/bin'
 dir_path = os.path.dirname(os.path.realpath(__file__))
 wavi_path = os.path.join(dir_path, "wavi-master/bin")
-os.environ["PATH"] += os.pathsep + wavi_path
+dot_path = os.path.join(dir_path, "Graphviz 2.44.1/bin")
+os.environ["PATH"] += os.pathsep + wavi_path + dot_path
 
 class CommandLineInterface(Cmd):
 
@@ -122,29 +123,54 @@ class CommandLineInterface(Cmd):
     def help_db_info(self):
         print(self.jloader.get_help_text('db_info'))
 
-    def do_cls_info_select_all(self, arg):
-        loop = asyncio.get_event_loop()
+    def do_table_select(self, arg):
+
         try:
-            result = loop.run_until_complete(main2())
-            print(result)
+            raw_data = arg.split()
+            db = raw_data[0]
+
+            loop = asyncio.get_event_loop()
+
+            if db == '-a':
+                result = loop.run_until_complete(main5())
+                print(result)
+            elif db == '-m':
+                result = loop.run_until_complete(main4())
+                print(result)
+            elif db == '-i':
+                result = loop.run_until_complete(main2())
+                print(result)
+            else:
+                print(f'The table you choose is not existed in the database, please try "db_connect" to check the existed tables')
         except Exception as e:
             print(e)
 
-    def do_cls_mtd_select_all(self, arg):
-        loop = asyncio.get_event_loop()
-        try:
-            result = loop.run_until_complete(main4())
-            print(result)
-        except Exception as e:
-            print(e)
+    def help_table_select(self):
+        print(self.jloader.get_help_text('table_select'))
 
-    def do_cls_atr_select_all(self, arg):
-        loop = asyncio.get_event_loop()
-        try:
-            result = loop.run_until_complete(main5())
-            print(result)
-        except Exception as e:
-            print(e)
+    # def do_cls_info_select_all(self, arg):
+    #     loop = asyncio.get_event_loop()
+    #     try:
+    #         result = loop.run_until_complete(main2())
+    #         print(result)
+    #     except Exception as e:
+    #         print(e)
+
+    # def do_cls_mtd_select_all(self, arg):
+    #     loop = asyncio.get_event_loop()
+    #     try:
+    #         result = loop.run_until_complete(main4())
+    #         print(result)
+    #     except Exception as e:
+    #         print(e)
+
+    # def do_cls_atr_select_all(self, arg):
+    #     loop = asyncio.get_event_loop()
+    #     try:
+    #         result = loop.run_until_complete(main5())
+    #         print(result)
+    #     except Exception as e:
+    #         print(e)
 
     def do_wavi(self, arg):
         try:
