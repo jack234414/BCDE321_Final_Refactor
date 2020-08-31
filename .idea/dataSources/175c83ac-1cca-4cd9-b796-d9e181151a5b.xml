@@ -758,16 +758,51 @@ SELECT|mysql.user:null
 SELECT|sys.sys_config:null
 </ObjectGrants>
     </user>
-    <table id="234" parent="6" name="input_js"/>
-    <column id="235" parent="234" name="class_name">
+    <table id="234" parent="6" name="class_attr"/>
+    <table id="235" parent="6" name="class_info"/>
+    <table id="236" parent="6" name="class_method"/>
+    <table id="237" parent="6" name="input_js"/>
+    <column id="238" parent="234" name="class_id">
       <Position>1</Position>
-      <DataType>varchar(50)|0s</DataType>
+      <DataType>int(11)|0s</DataType>
     </column>
-    <column id="236" parent="234" name="function_name">
+    <column id="239" parent="234" name="attributes">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
     </column>
-    <column id="237" parent="234" name="var_num">
+    <column id="240" parent="235" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="241" parent="235" name="name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+    </column>
+    <column id="242" parent="235" name="attr_num">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="243" parent="235" name="method_num">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="244" parent="236" name="class_id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="245" parent="236" name="methods">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+    </column>
+    <column id="246" parent="237" name="class_name">
+      <Position>1</Position>
+      <DataType>varchar(50)|0s</DataType>
+    </column>
+    <column id="247" parent="237" name="function_name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+    </column>
+    <column id="248" parent="237" name="var_num">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
     </column>

@@ -2,20 +2,11 @@
 # -*- coding:utf-8 -*-
 
 
-# import packages
-
-# import cmd
-# import re
-# import os
-
-
 # Jack imports
 import asyncio
 import os
-# import cmd
-# import re
 from read_js import Read_js
-from mysql import MySQL, main1, main2, main3
+from mysql import main1, main2, main3, main4, main5
 
 # Edan imports
 from cmd import Cmd
@@ -48,7 +39,7 @@ class CommandLineInterface(Cmd):
     def help_create_pickle(self):
         print(self.jloader.get_help_text('create_pickle'))
 
-    def do_exit(self):
+    def do_exit(self, arg):
         return True
 
     def help_exit(self):
@@ -61,6 +52,10 @@ class CommandLineInterface(Cmd):
             Read_js().check_file_type(input_file)
 
             self.con.load_data(input_file)
+
+        except IndexError:
+            print(f'You should follow the format, please try "help load_data" to find the use.')
+
         except Exception as e:
             print(e)
 
@@ -79,6 +74,7 @@ class CommandLineInterface(Cmd):
     def do_convert_to_uml(self, arg):
         try:
             self.con.convert_to_uml()
+
         except Exception as e:
             print(e)
 
@@ -101,28 +97,37 @@ class CommandLineInterface(Cmd):
         except Exception as e:
             print(e)
 
-        # finally:
-        #     loop.close()
-
-    def do_db_btf_info(self, arg):
+    def do_db_info(self, arg):
         loop = asyncio.get_event_loop()
         try:
             result = loop.run_until_complete(main3())
             print(result)
         except Exception as e:
             print(e)
-        # finally:
-        #     loop.close()
 
-    def do_tb_select_all(self, arg):
+    def do_cls_info_select_all(self, arg):
         loop = asyncio.get_event_loop()
         try:
             result = loop.run_until_complete(main2())
             print(result)
         except Exception as e:
             print(e)
-        # finally:
-        #     loop.close()
+
+    def do_cls_mtd_select_all(self, arg):
+        loop = asyncio.get_event_loop()
+        try:
+            result = loop.run_until_complete(main4())
+            print(result)
+        except Exception as e:
+            print(e)
+
+    def do_cls_atr_select_all(self, arg):
+        loop = asyncio.get_event_loop()
+        try:
+            result = loop.run_until_complete(main5())
+            print(result)
+        except Exception as e:
+            print(e)
 
 if __name__ == '__main__':
     import sys
@@ -131,47 +136,3 @@ if __name__ == '__main__':
     sys_exit_code = cli.cmdloop()
     print('Exiting with code: {!r}'.format(sys_exit_code))
     sys.exit(sys_exit_code)
-
-# Jack coding area
-
-# print("hello world")
-#
-# print("testing")
-#
-# A = 1 + 2
-# print(A)
-#
-#
-# def check_file(self, input_file):
-#     """
-#     >>> a = CheckDirectory()
-#     >>> a.check_file('/Users/jimmy/py/pythonClassProject2020/ppp_cmd.py')
-#     'ppp_cmd.py'
-#     """
-#
-#     if os.path.isfile(input_file):
-#         work_dir = os.path.dirname(input_file)
-#         file = input_file[len(work_dir) + 1:]
-#
-#         return file
-#
-#     else:
-#         work_dir = input_file
-#         file = "*.py"
-#
-#         return file
-#
-# if __name__ == '__main__':
-#
-#     file1 = open(check_file("/Users/jimmy/py/pythonClassProject2020/cmd_test.py")).read()
-#     imp = re.findall(r"var\s\w+", file1, re.S)
-#     func = re.findall(r"function\sdo\w+", file1, re.S)
-#
-#     for i in func:
-#         j = i.strip('function')
-#         func_all.append(j)
-#     print(self.func_all)
-#
-#     for i in imp:
-#         j = i.strip('var')
-#         imp_arr.append(j)

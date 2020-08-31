@@ -1,6 +1,8 @@
 from esprima import NodeVisitor, parseScript
 from graphviz import Digraph, Source
 from pickler import Pickler
+import pymysql
+from beautifultable import BeautifulTable
 
 
 class Converter(NodeVisitor):
@@ -101,15 +103,58 @@ class Converter(NodeVisitor):
                      ),
                      shape="record",
                      )
+            print(class_info)
         s = Source(dot.source, filename="test.gv", format="png")
         s.view()
+
 
     def make_pickle(self):
         pickle = Pickler()
         try:
             assert len(self._dict_of_everything.keys()) > 0
             pickle.serialise(self._dict_of_everything)
+
         except FileNotFoundError as e:
             print(e)
         except AssertionError:
             print('Dictionary is empty, try loading then extracting data first')
+
+    # def upload_db(self):
+    #     con = pymysql.connect('ara-mysql.mysql.database.azure.com', 'ara_user@ara-mysql',
+    #                           'Test1234', 'uml_resource')
+    #     print("Connection established...")
+    #
+    #     try:
+    #
+    #         with con.cursor() as cur:
+    #             print("Connection build successfully")
+    #
+    #             cur.execute('DESCRIBE uml_resource.input_js')
+    #             # print(cur.description)
+    #             print("Beatiful table below")
+    #             r = cur.fetchall()
+    #
+    #             table = BeautifulTable()
+    #
+    #             my_col_list = []
+    #             for i in range(len(cur.description)):
+    #                 # print(str(i))
+    #                 my_col_list.append(cur.description[i][0])
+    #             table.columns.header = my_col_list
+    #
+    #             my_row_list = []
+    #             for i in range(len(r)):
+    #                 my_row_list.append(str(i))
+    #                 # print(str(i))
+    #                 table.rows.append(list(r[i]))
+    #             table.rows.header = my_row_list
+    #
+    #             print(table)
+    #
+    #             print("Connection closing...")
+    #
+    #     except pymysql.Error as err:
+    #         sqlstate = err.args[1]
+    #         print(sqlstate)
+
+

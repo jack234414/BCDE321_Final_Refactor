@@ -1,8 +1,8 @@
-import asyncio
 import aiomysql
 from beautifultable import BeautifulTable
 
 import pymysql
+from converter import Converter
 
 # from distutils.sysconfig import get_python_lib
 # print(get_python_lib())
@@ -154,14 +154,14 @@ async def testing_select_all():
     else:
 
         await mysql.create_cursor()
-        table_all_query = "SELECT * FROM uml_resource.input_js"
+        table_all_query = "SELECT * FROM uml_resource.class_info"
         await mysql.process_query(table_all_query)
         r = await mysql.fetch_all_records(table_all_query)
 
-        print("Select all data from input_js table...")
+        print("Select all data from class_info table...")
 
         table = BeautifulTable()
-        table.columns.header = ['class_name', 'function_name', 'var_num']
+        table.columns.header = ['id', 'name', 'attr_num', 'method_num']
 
 
         my_row_list = []
@@ -201,7 +201,7 @@ async def testing_btf_table():
         with con.cursor() as cur:
             print("Connection build successfully")
 
-            cur.execute('DESCRIBE uml_resource.input_js')
+            cur.execute('DESCRIBE uml_resource.class_info')
             # print(cur.description)
             print("Beatiful table below")
             r = cur.fetchall()
@@ -239,9 +239,103 @@ async def main2():
 async def main3():
     await testing_btf_table()
 
-# if __name__ == "__main__":
-#     loop = asyncio.get_event_loop()
-#     result = loop.run_until_complete(main3())
-#     loop.close()
 
 
+async def testing_method_all():
+    db_config = {
+        'host': 'ara-mysql.mysql.database.azure.com',
+        'port': 3306,
+        'db': 'uml_resource',
+        'user': 'ara_user@ara-mysql',
+        'password': 'Test1234'
+    }
+
+    mysql = MySQL()
+
+    try:
+
+        await mysql.create_connection(db_config)
+        print("Connection build successfully")
+
+    except pymysql.Error as err:
+
+        sqlstate = err.args[1]
+        print(sqlstate)
+
+    else:
+
+        await mysql.create_cursor()
+        table_all_query = "SELECT * FROM uml_resource.class_method"
+        await mysql.process_query(table_all_query)
+        r = await mysql.fetch_all_records(table_all_query)
+
+        print("Select all data from class_method table...")
+
+        table = BeautifulTable()
+        table.columns.header = ['id', 'method']
+
+
+        my_row_list = []
+        for i in range(len(r)):
+            my_row_list.append(str(i))
+            # print(str(i))
+            table.rows.append(list(r[i]))
+        table.rows.header = my_row_list
+        print(table)
+
+        print("Connection closing...")
+
+
+async def main4():
+    await testing_method_all()
+
+
+
+
+async def testing_attr_all():
+    db_config = {
+        'host': 'ara-mysql.mysql.database.azure.com',
+        'port': 3306,
+        'db': 'uml_resource',
+        'user': 'ara_user@ara-mysql',
+        'password': 'Test1234'
+    }
+
+    mysql = MySQL()
+
+    try:
+
+        await mysql.create_connection(db_config)
+        print("Connection build successfully")
+
+    except pymysql.Error as err:
+
+        sqlstate = err.args[1]
+        print(sqlstate)
+
+    else:
+
+        await mysql.create_cursor()
+        table_all_query = "SELECT * FROM uml_resource.class_attr"
+        await mysql.process_query(table_all_query)
+        r = await mysql.fetch_all_records(table_all_query)
+
+        print("Select all data from class_attr table...")
+
+        table = BeautifulTable()
+        table.columns.header = ['id', 'method']
+
+
+        my_row_list = []
+        for i in range(len(r)):
+            my_row_list.append(str(i))
+            # print(str(i))
+            table.rows.append(list(r[i]))
+        table.rows.header = my_row_list
+        print(table)
+
+        print("Connection closing...")
+
+
+async def main5():
+    await testing_attr_all()

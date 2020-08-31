@@ -22,7 +22,6 @@ class Read_js:
                     file = input_file[len(work_dir):]
                 try:
                     assert file.endswith('.js')
-                    # return file
                     print("The current directory is: " + work_dir + "\n" +
                           "Your selected js file is: " + file)
                     # return "The current directory is: " + work_dir + "\n" + \
@@ -49,20 +48,16 @@ class Read_js:
         function = re.findall(r'function\s\w+', source, re.S) + re.findall(r'function\s\w+', source, re.S)
         var = re.findall(r'var\s\w+', source, re.S) + re.findall(r'const\s\w+', source, re.S) + re.findall(r'let\s\w+', source, re.S)
 
-        # print(function)
-        # print(var)
 
         for obj in function:
             function_all.append(obj.lstrip('function'))
-        # print(function_all)
-        # print(type(function_all))
+
 
         for obj in var:
             var_all.append(re.sub('var|const|let| ', '', obj))
             # var_all.append(obj.lstrip('var' or 'const' or 'let'))
+        print(var_all + '\n' + function_all)
 
-        # print(var_all)
-        # print(type(var_all))
 
         # file1 = open("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/js-test/throw.js").read()
         # file1 = open("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/js-test/console-table.js").read()
@@ -96,14 +91,16 @@ class Read_js:
 
 
 # if __name__ == '__main__':
-#     a = read_js()
+#     a = Read_js()
 #     a.check_file_type("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/js-test/breakpoints.js")
 #     a.check_file_type("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/js-test/breakpoints.mp3")
 #     a.check_file_type("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/js-test/")
 #     a.check_file_type("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/Bar.py")
 #     # a.check_file_type("JStest1.js")
 #
-#     print("=" * 100)
-#     a.get_data("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/JStest1.js")
+    # print("=" * 100)
+    # a.get_data("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/JStest1.js")
+    #
+    # a.get_data("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/js-test/throw.js")
 
 
