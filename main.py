@@ -5,6 +5,7 @@
 # Jack imports
 import asyncio
 import os
+import subprocess
 from read_js import Read_js
 from mysql import main1, main2, main3, main4, main5
 
@@ -13,6 +14,10 @@ from cmd import Cmd
 from converter import Converter
 from json_loader import JsonLoader
 
+os.environ["PATH"] += os.pathsep + './wavi-master/bin'
+dir_path = os.path.dirname(os.path.realpath(__file__))
+wavi_path = os.path.join(dir_path, "wavi-master/bin")
+os.environ["PATH"] += os.pathsep + wavi_path
 
 class CommandLineInterface(Cmd):
 
@@ -128,6 +133,14 @@ class CommandLineInterface(Cmd):
             print(result)
         except Exception as e:
             print(e)
+
+    def do_wavi(self, arg):
+        command = "wavi ./js-test uml-test.svg"
+        print(os.environ["PATH"])
+        print('\n')
+        print(wavi_path)
+        subprocess.run(command, cwd=dir_path, shell=True)
+
 
 if __name__ == '__main__':
     import sys
