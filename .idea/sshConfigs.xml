@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig host="40.78.152.220" id="12a02854-351f-49c8-92a6-541f248a1c5b" keyPath="$PROJECT_DIR$/R-studio_key.pem" port="22" nameFormat="DESCRIPTIVE" username="rstudio" />
+    </configs>
+  </component>
+</project>

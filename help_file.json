@@ -34,17 +34,17 @@
 
     {
       "functionName": "db_connect",
-      "helpText" : "Connects to Azure MySQL server and shows all databases for further use \nSyntax: db_connect"
+      "helpText" : "Shows MySQL version and connection \nSyntax: db_connect"
     },
 
     {
-      "functionName": "db_info",
-      "helpText" : "Shows MySQL version \nSyntax: db_info"
+      "functionName": "db_table_select",
+      "helpText" : "To select a table you want to see with stored data \nSyntax: table_select [-options] \nOptions: \n -a: Select attributes table \n -m: Select methods table \n -c: Select all extracted class table"
     },
 
     {
-      "functionName": "table_select",
-      "helpText" : "To select a table you want to see with stored data \nSyntax: table_select [-options] \nOptions: \n-a: Select attributes table \n-m: Select methods table \n-i: Select all extracted class table"
+      "functionName": "db_add_data",
+      "helpText" : "Add extracted data to mysql, at the same time, create the needed table."
     },
 
     {
@@ -55,8 +55,33 @@
     {
       "functionName": "exit",
       "helpText" : "Exits the program \nSyntax: exit"
+    },
+
+    {
+      "functionName": "use_pickle",
+      "helpText" : "To load the pickle data  \nSyntax: use_pickle"
+    },
+
+
+    {
+      "functionName": "delete_pickle",
+      "helpText" : "Delete the created pickle \nSyntax: delete_pickle [pickle_path]"
+    },
+
+    {
+      "functionName": "draw_chart",
+      "helpText" : "Can draw a diagram from the data in database \nSyntax: draw_chart"
+    },
+
+    {
+      "functionName": "validate_data",
+      "helpText" : "Can validate the extracted data print it as a list for further use. Syntax: validate_data [-options] \nOptions: \n -a: Validate how many attributes are extracted, format: [attr_id] [class_id] [attr_name] \n -m: Validate how many methods are extracted, format: [method_id] [class_id] [method_name] \n -c: Validate how many classes are extracted, format: [class_id] [class_name]"
+    },
+
+    {
+      "functionName": "js_parser",
+      "helpText" : "Can read js code and extract the variables and functions. Syntax: js_parser [-file path]"
     }
 
   ]
-
 }

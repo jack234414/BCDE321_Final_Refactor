@@ -1,13 +1,17 @@
 #!/usr/local/bin/Python3.6
 # -*- coding:utf-8 -*-
 
-
 # Jack imports
-import asyncio
 import os
+import sys
 import subprocess
+import asyncio
+
 from read_js import Read_js
-from mysql import main1, main2, main3, main4, main5
+from mmmmsql import add_data, show_db_info, show_db_class, show_db_method, show_db_attr, test_connection
+from validate_data import Data_to_db
+from pickler import Pickler
+from my_plot import MyPlot
 
 # Edan imports
 from cmd import Cmd
@@ -17,15 +21,18 @@ from json_loader import JsonLoader
 os.environ["PATH"] += os.pathsep + './wavi-master/bin'
 dir_path = os.path.dirname(os.path.realpath(__file__))
 wavi_path = os.path.join(dir_path, "wavi-master/bin")
-dot_path = os.path.join(dir_path, "Graphviz 2.44.1/bin")
-os.environ["PATH"] += os.pathsep + wavi_path + dot_path
+os.environ["PATH"] += os.pathsep + wavi_path
 
 class CommandLineInterface(Cmd):
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, dir=os.getcwd()):
+        Cmd.__init__(self, dir)
+        self.dir = dir
+        self.prompt = ">>" + dir + ">> "
+        self.hosts = []
+        self.connections = []
         self.con = Converter()
-        self.prompt = ">>> "
+        self.loop = asyncio.get_event_loop()
         self.intro = "This program will generate a class diagram from your JavaScript source code. " \
                      "Type help for a list of commands."
         jloader = JsonLoader('help_file.json')
@@ -36,8 +43,9 @@ class CommandLineInterface(Cmd):
             print('There is no help file.')
         self.jloader = jloader
 
+    # Edan's work below
     def default(self, arg):
-        print(arg, 'is an incorrect command, type help to see the command list')
+        print(arg, 'is an incorrect command, type help or ? to see the command list')
 
     def do_create_pickle(self, arg):
         self.con.make_pickle()
@@ -60,7 +68,7 @@ class CommandLineInterface(Cmd):
             self.con.load_data(input_file)
 
         except IndexError:
-            print(f'You should follow the format, please try "help load_data" to find the use.')
+            print('You should follow the format, please try {help load_data} to find the use.')
 
         except Exception as e:
             print(e)
@@ -79,7 +87,10 @@ class CommandLineInterface(Cmd):
 
     def do_convert_to_uml(self, arg):
         try:
-            self.con.convert_to_uml()
+            if self.con is not None:
+                self.con.convert_to_uml()
+            else:
+                print("Please try to extract data first.")
 
         except Exception as e:
             print(e)
@@ -87,7 +98,14 @@ class CommandLineInterface(Cmd):
     def help_convert_to_uml(self):
         print(self.jloader.get_help_text('convert_to_uml'))
 
-    # Jack uncompleted coding
+
+    """Jack's work above"""
+    def do_EOF(self, arg):
+        return True
+
+    def help_EOF(self):
+        print(self.jloader.get_help_text('EOF'))
+
     def do_read_js(self, arg):
         chk = Read_js()
         chk.check_file_type(arg)
@@ -95,16 +113,45 @@ class CommandLineInterface(Cmd):
     def help_read_js(self):
         print(self.jloader.get_help_text('read_js'))
 
+    def do_js_parser(self, input_file):
+        my_data = Read_js()
+        print(my_data.get_data(input_file))
+
+    def help_js_parser(self):
+        print(self.jloader.get_help_text('js_parser'))
+
     def do_pwd(self, arg):
-        print(os.getcwd())
+        if len(arg) > 1:
+            print('Please check <help pwd> to follow up the format')
+        else:
+            print(os.getcwd())
 
     def help_pwd(self):
         print(self.jloader.get_help_text('pwd'))
 
+    def do_use_pickle(self, arg):
+        pickle_data = Data_to_db()
+        pickle_data.print_pickle()
+        # self.con.load_data("JStest1.js")
+        # self.con.visit(self.con.extract_data(self.con))
+        # self.con.convert_to_uml()
+        # self.con.make_pickle()
+        # my_pickler = Pickler()
+        # print(my_pickler.convert(my_pickler.use_pickle()))
+
+    def help_use_pickle(self):
+        print(self.jloader.get_help_text('se_pickle'))
+
+    def do_delete_pickle(self, arg):
+        my_pickler = Pickler()
+        my_pickler.delete_pickle(arg)
+
+    def help_delete_pickle(self):
+        print(self.jloader.get_help_text('delete_pickle'))
+
     def do_db_connect(self, arg):
-        loop = asyncio.get_event_loop()
         try:
-            result = loop.run_until_complete(main1())
+            result = self.loop.run_until_complete(show_db_info(self.loop))
             print(result)
         except Exception as e:
             print(e)
@@ -112,65 +159,99 @@ class CommandLineInterface(Cmd):
     def help_db_connect(self):
         print(self.jloader.get_help_text('db_connect'))
 
-    def do_db_info(self, arg):
-        loop = asyncio.get_event_loop()
+    def do_test_db(self, arg):
         try:
-            result = loop.run_until_complete(main3())
+            test_connection()
+
+        except Exception as e:
+            print(e)
+
+    def do_db_add_data(self, arg):
+        try:
+            result = self.loop.run_until_complete(add_data(self.loop))
             print(result)
         except Exception as e:
             print(e)
 
-    def help_db_info(self):
-        print(self.jloader.get_help_text('db_info'))
+    def help_db_add_data(self):
+        print(self.jloader.get_help_text('db_add_data'))
 
-    def do_table_select(self, arg):
+    def do_db_table_select(self, arg):
 
         try:
             raw_data = arg.split()
             db = raw_data[0]
 
-            loop = asyncio.get_event_loop()
+            if len(raw_data) == 1:
+                try:
+                    if db == '-c':
+                        result = self.loop.run_until_complete(show_db_class(self.loop))
+                        print(result)
+                    elif db == '-m':
+                        result = self.loop.run_until_complete(show_db_method(self.loop))
+                        print(result)
+                    elif db == '-a':
+                        result = self.loop.run_until_complete(show_db_attr(self.loop))
+                        print(result)
+                    else:
+                        print('The table you choose is not existed in the database,'
+                              ' please try {help table_select} to check the existed tables')
 
-            if db == '-a':
-                result = loop.run_until_complete(main5())
-                print(result)
-            elif db == '-m':
-                result = loop.run_until_complete(main4())
-                print(result)
-            elif db == '-i':
-                result = loop.run_until_complete(main2())
-                print(result)
+                except Exception as e:
+                    print(e)
+
+            elif len(raw_data) != 1:
+                print('Only 1 argument allowed, please try {help table_select} to follow up the format')
             else:
-                print(f'The table you choose is not existed in the database, please try "db_connect" to check the existed tables')
-        except Exception as e:
-            print(e)
+                print("Please at the least entre 1 argument as an option. Try again !")
 
-    def help_table_select(self):
-        print(self.jloader.get_help_text('table_select'))
+        except IndexError as ie:
+            print("Please at the least entre 1 argument as an option. Try again !")
 
-    # def do_cls_info_select_all(self, arg):
-    #     loop = asyncio.get_event_loop()
-    #     try:
-    #         result = loop.run_until_complete(main2())
-    #         print(result)
-    #     except Exception as e:
-    #         print(e)
+    def help_db_table_select(self):
+        print(self.jloader.get_help_text('db_table_select'))
 
-    # def do_cls_mtd_select_all(self, arg):
-    #     loop = asyncio.get_event_loop()
-    #     try:
-    #         result = loop.run_until_complete(main4())
-    #         print(result)
-    #     except Exception as e:
-    #         print(e)
+    def do_draw_chart(self, arg):
+        my_plot = MyPlot()
+        my_plot.load_from_db()
+        my_plot.draw()
 
-    # def do_cls_atr_select_all(self, arg):
-    #     loop = asyncio.get_event_loop()
-    #     try:
-    #         result = loop.run_until_complete(main5())
-    #         print(result)
-    #     except Exception as e:
-    #         print(e)
+    def help_draw_chart(self):
+        print(self.jloader.get_help_text('draw_chart'))
+
+    def do_validate_data(self, arg):
+        v_data = Data_to_db()
+
+        try:
+            raw_data = arg.split()
+            opt = raw_data[0]
+
+            if len(raw_data) == 1:
+                try:
+                    if opt == '-c':
+                        print(v_data.extract_name())
+                    elif opt == '-m':
+                        print(v_data.extract_method())
+                    elif opt == '-a':
+                        print(v_data.extract_attr())
+                    else:
+                        print(
+                            'The data you choose is not existed in the extracted data, '
+                            'please try {help validate_data} to check the existed tables')
+
+                except Exception as e:
+                    print(e)
+
+            elif len(raw_data) != 1:
+                print('Only 1 argument allowed, please try {help validate_data} to follow up the format')
+            else:
+                print("Please at the least entre 1 argument as an option. Try again !")
+
+        except IndexError as ie:
+            print("Please at the least entre 1 argument as an option. Try again !")
+
+    def help_validate_data(self):
+        print(self.jloader.get_help_text('validate_data'))
 
     def do_wavi(self, arg):
         try:
@@ -181,6 +262,9 @@ class CommandLineInterface(Cmd):
             print("Your wavi directory is: " + wavi_path)
             subprocess.run(command, cwd=dir_path, shell=True)
 
+        except IndexError:
+            print('You should follow the format, please try {help wavi} to find the use.')
+
         except Exception as e:
             print(e)
 
@@ -188,11 +272,57 @@ class CommandLineInterface(Cmd):
         print(self.jloader.get_help_text('wavi'))
 
 
+    # Jack's work (11.Amount of checking for pre- and post- conditions of methods)
+    def preloop(self):
+        """Initialization"""
+        Cmd.preloop(self)  # sets up command completion
+        self._hist = []  # No history yet
+        self._locals = {}  # Initialize execution namespace for user
+        self._globals = {}
+
+    # Jack's work (11.Amount of checking for pre- and post- conditions of methods)
+    def postloop(self):
+        """Finish up everything"""
+        Cmd.postloop(self)
+        print("The application will now exit!")
+
+
+    def emptyline(self):
+        """Do nothing on empty input line"""
+        pass
+
 
 if __name__ == '__main__':
-    import sys
 
     cli = CommandLineInterface()
-    sys_exit_code = cli.cmdloop()
-    print('Exiting with code: {!r}'.format(sys_exit_code))
-    sys.exit(sys_exit_code)
+
+    try:
+        # Jack's work (1.Support command-line arguments)
+        if len(sys.argv) > 1:
+            cli.onecmd(' '.join(sys.argv[1:]))
+        else:
+            sys_exit_code = cli.cmdloop()
+            print('Exiting with code: {!r}'.format(sys_exit_code))
+            sys.exit(sys_exit_code)
+
+    # Jack's work (10.Exception handling)
+    except KeyboardInterrupt as e:
+        print("\nProgram aborted by user\n")
+
+"""
+1. Support command-line arguments
+2. Has a line-oriented command interpreter based on cmd or similar package
+3. Display command line help of available commands
+4. Change commands and options
+5. Extract data
+6. Validate data
+7. Provides object- persistence / object serialization using either pickle or shelve
+8. Can load data from a file
+9. Can deal with file directory
+10. Can raise exceptions and provide exception handling
+11. Amount of checking for pre- and post- conditions of methods
+12. Provide doctests
+13. Provide unittests
+14. Pretty print, i.e., displaying data in chart/ diagram, e.g., bar chart, pie chart, UML diagram, etc. 
+15. Can save and read data from a database, e.g., SQLite, MySQL and MongoDB 
+"""

@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="MySQL" uuid="175c83ac-1cca-4cd9-b796-d9e181151a5b">
+    <data-source source="LOCAL" name="azure" uuid="7de4367e-9d60-42d2-b67b-24cb636a2f97">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://ara-mysql.mysql.database.azure.com:3306/uml_resource</jdbc-url>
-      <driver-properties>
-        <property name="serverTimezone" value="Pacific/Auckland" />
-      </driver-properties>
+      <jdbc-url>jdbc:mysql://40.78.152.220:3306/uml_resource</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="uml_resource@localhost" uuid="4a0a356c-3d0c-4f7d-9e9e-1ec81261abf1">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/uml_resource</jdbc-url>
     </data-source>
   </component>
 </project>

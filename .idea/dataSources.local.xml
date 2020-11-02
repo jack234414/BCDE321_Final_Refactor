@@ -1,26 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL" uuid="175c83ac-1cca-4cd9-b796-d9e181151a5b">
-      <database-info product="MySQL" version="5.6.42.0" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.21 (Revision: 33f65445a1bcc544eb0120491926484da168f199)" dbms="MYSQL" exact-version="5.7.29" exact-driver-version="8.0">
+    <data-source name="azure" uuid="7de4367e-9d60-42d2-b67b-24cb636a2f97">
+      <database-info product="MySQL" version="5.7.31-0ubuntu0.18.04.1" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.21 (Revision: 33f65445a1bcc544eb0120491926484da168f199)" dbms="MYSQL" exact-version="5.7.31" exact-driver-version="8.0">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
-      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
-      <user-name>ara_user@ara-mysql</user-name>
+      <user-name>mysql</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node kind="schema">
-            <name qname="@" />
-            <name qname="uml_resource" />
-          </node>
+          <node kind="schema" qname="@" />
         </introspection-scope>
       </schema-mapping>
+      <ssh-properties>
+        <enabled>false</enabled>
+        <ssh-config-id>12a02854-351f-49c8-92a6-541f248a1c5b</ssh-config-id>
+      </ssh-properties>
       <ssl-config>
-        <enabled>true</enabled>
+        <client-key>$PROJECT_DIR$/R-studio_key.pem</client-key>
+        <enabled>false</enabled>
         <mode>REQUIRE</mode>
       </ssl-config>
+    </data-source>
+    <data-source name="uml_resource@localhost" uuid="4a0a356c-3d0c-4f7d-9e9e-1ec81261abf1">
+      <database-info product="MySQL" version="8.0.15" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.21 (Revision: 33f65445a1bcc544eb0120491926484da168f199)" dbms="MYSQL" exact-version="8.0.15" exact-driver-version="8.0">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>hadooper</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="schema" qname="@" />
+        </introspection-scope>
+      </schema-mapping>
     </data-source>
   </component>
 </project>

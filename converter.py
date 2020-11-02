@@ -1,8 +1,7 @@
 from esprima import NodeVisitor, parseScript
 from graphviz import Digraph, Source
 from pickler import Pickler
-import pymysql
-from beautifultable import BeautifulTable
+import json
 
 
 class Converter(NodeVisitor):
@@ -18,6 +17,10 @@ class Converter(NodeVisitor):
         self._attributes = []
         self._dict_of_everything = {}
         self._index = 0
+
+    def dump_data(self):
+        with open('result.json', 'w') as fp:
+            json.dump(self._dict_of_everything, fp)
 
     def load_data(self, input_file):
         self.input_file = input_file
@@ -90,72 +93,36 @@ class Converter(NodeVisitor):
 
     def convert_to_uml(self):
         dot = Digraph(comment='UML Diagram')
-        for key in self._dict_of_everything:
-            class_info = self._dict_of_everything.get(key)
-            classname = class_info.get('classname')
-            methods = class_info.get('classmethod')
-            attributes = class_info.get('attributes')
-            dot.node(classname,
-                     "{{{classname}|{attributes}|{methods}}}".format(
-                         classname=classname,
-                         attributes="\l".join(attributes),
-                         methods="()\l".join(methods) + "()"
-                     ),
-                     shape="record",
-                     )
-            # print(class_info)
-        dot.edge('CycleLog', 'Ride')
-        s = Source(dot.source, filename="test.gv", format="png")
-        s.view()
-
+        if bool(self._dict_of_everything) is True:
+            for key in self._dict_of_everything:
+                class_info = self._dict_of_everything.get(key)
+                classname = class_info.get('classname')
+                methods = class_info.get('classmethod')
+                attributes = class_info.get('attributes')
+                dot.node(classname,
+                         "{{{classname}|{attributes}|{methods}}}".format(
+                             classname=classname,
+                             attributes="\l".join(attributes),
+                             methods="()\l".join(methods) + "()"
+                         ),
+                         shape="record",
+                         )
+                # print(class_info)
+            # dot.edge('CycleLog', 'Ride')
+            s = Source(dot.source, filename="test.gv", format="png")
+            s.view()
+        else:
+            return None
 
     def make_pickle(self):
         pickle = Pickler()
         try:
             assert len(self._dict_of_everything.keys()) > 0
             pickle.serialise(self._dict_of_everything)
+            with open('result.json', 'w', encoding='utf8') as json_file:
+                json.dump(self._dict_of_everything ,json_file)
 
         except FileNotFoundError as e:
             print(e)
         except AssertionError:
             print('Dictionary is empty, try loading then extracting data first')
-
-    # def upload_db(self):
-    #     con = pymysql.connect('ara-mysql.mysql.database.azure.com', 'ara_user@ara-mysql',
-    #                           'Test1234', 'uml_resource')
-    #     print("Connection established...")
-    #
-    #     try:
-    #
-    #         with con.cursor() as cur:
-    #             print("Connection build successfully")
-    #
-    #             cur.execute('DESCRIBE uml_resource.input_js')
-    #             # print(cur.description)
-    #             print("Beatiful table below")
-    #             r = cur.fetchall()
-    #
-    #             table = BeautifulTable()
-    #
-    #             my_col_list = []
-    #             for i in range(len(cur.description)):
-    #                 # print(str(i))
-    #                 my_col_list.append(cur.description[i][0])
-    #             table.columns.header = my_col_list
-    #
-    #             my_row_list = []
-    #             for i in range(len(r)):
-    #                 my_row_list.append(str(i))
-    #                 # print(str(i))
-    #                 table.rows.append(list(r[i]))
-    #             table.rows.header = my_row_list
-    #
-    #             print(table)
-    #
-    #             print("Connection closing...")
-    #
-    #     except pymysql.Error as err:
-    #         sqlstate = err.args[1]
-    #         print(sqlstate)
-
-
