@@ -1,6 +1,5 @@
 #!/usr/local/bin/Python3.6
 # -*- coding:utf-8 -*-
-import os
 import re
 import os.path
 from os import path
@@ -17,100 +16,94 @@ class ReadFileTemplate(metaclass=ABCMeta):
         self.var_name = []
         self.row_data = ''
 
-        self._file_dir = ""
-        self._file_contents = ""
-        self._clean_file_contents = ""
+    @abstractmethod
+    def is_existent_path(self, input_path):
+        raise NotImplementedError
 
     @abstractmethod
     def is_existent_file(self, input_path):
         raise NotImplementedError
 
     @abstractmethod
-    def is_existent_path(self, input_path):
-        raise NotImplementedError
-
-    @abstractmethod
-    def read_file(self):
+    def read_file(self, input_path):
         raise NotImplementedError
 
     @abstractmethod
     def get_data(self, input_path):
-        self._set_file_dir(new_dir)
-        self._read_file()
-        return self._clean_file_contents
+        self.read_file(input_path)
 
 
+class ReadNormalFile:
+    def __init__(self, normal_file_template: ReadFileTemplate):
+        self.normal_file_template = normal_file_template
 
-class Read_js:
-    """doctest
-    >>> to_extract_data = Read_js()
-    >>> to_extract_data.get_data("jack_jsTest.js")
-    "var: ['width', 'height', 'testtttt', 'aaaaaaa', 'goodfunction', 'area']\\nfunction: [' calculateArea', ' calculateArea']"
-    >>> wrong_path = Read_js()
-    >>> wrong_path.check_file_type("not_exist.js")
-    You did not input any path or your input file is not existed
-    """
+    def return_is_existent_path(self, input_path):
+        return self.normal_file_template.is_existent_path(input_path)
 
-    def __init__(self):
-        self.fucntion_name = []
-        self.var_name = []
-        self.row_data = ''
-        self.file = ''
-        self.work_dir = ''
-        self.input = ''
+    def return_is_existent_file(self, input_path):
+        return self.normal_file_template.is_existent_file(input_path)
 
-    # Jacks work
-    def check_file_type(self, input_file):
-        self.input = input_file
-        if os.path.exists(input_file):
-            try:
-                assert os.path.isfile(self.input)
-                self.work_dir = os.path.dirname(self.input)
-                if self.input.startswith('/'):
-                    self.file = self.input[len(self.work_dir)+1:]
-                else:
-                    self.file = self.input[len(self.work_dir):]
-                try:
-                    assert self.file.endswith('.js')
-                    print("The current directory is: " + self.work_dir + "\n" +
-                          "Your selected js file is: " +  self.file)
-                    # return "The current directory is: " + work_dir + "\n" + \
-                    #        "Your selected js file is: " + file
-                except AssertionError:
-                    print(self.input + " is not a js file, please re-select")
+    def receive_data(self, input_path):
+        return self.normal_file_template.read_file(input_path)
 
-            except AssertionError:
-                print("You might select a wrong path(i.e. a directory path), " 
-                      "please re-enter a path of the js file you want to input")
+    def receive_var_and_func(self, input_path):
+        return self.normal_file_template.get_data(input_path)
+
+class ReadJS(ReadFileTemplate):
+
+    def is_existent_path(self, input_path):
+        if os.path.exists(input_path):
+            return True
         else:
             print("You did not input any path or your input file is not existed")
 
-    def get_data(self, input_file):
-
+    def is_existent_file(self, input_path):
         try:
-            if path.exists(input_file):
-                with open(input_file, "r") as source:
-                    self.row_data = source.read()
+            assert os.path.isfile(input_path)
+            return True
 
-                function = re.findall(r'function\s\w+', self.row_data, re.S) + re.findall(r'function\s\w+', self.row_data, re.S)
-                var = re.findall(r'var\s\w+', self.row_data, re.S) + re.findall(r'const\s\w+', self.row_data, re.S) + re.findall(r'let\s\w+', self.row_data, re.S)
+        except AssertionError:
+            print("You might select a wrong path(i.e. a directory path), "
+                  "please re-enter a path of the js file you want to input")
 
-                for obj in function:
-                    self.fucntion_name.append(obj.lstrip('function'))
+    def set_dir(self, input_path):
+        self.work_dir = os.path.dirname(input_path)
+        if self.work_dir.startswith('/'):
+            self.file_name = input_path[len(self.work_dir) + 1:]
+        else:
+            self.file_name = input_path[len(self.work_dir):]
 
-                for obj in var:
-                    self.var_name.append(re.sub('var|const|let| ', '', obj))
-                    # var_all.append(obj.lstrip('var' or 'const' or 'let'))
-                return 'var: ' + str(self.var_name) + '\n' + 'function: ' + str(self.fucntion_name)
+    def is_js_file(self, input_path):
+        try:
+            assert self.file_name.endswith('.js')
+            return "Your selected js file is: " + self.file_name
 
-            else:
-                print("Your given python file does not exist in the current directory "
-                      "or your input arguments were wrong. Please try again!")
+        except AssertionError:
+            print(self.input + " is not a js file, please re-select")
 
-        except Exception as err:
-            print("Please try again! The exception is: ", err)
+    def read_file(self, input_path):
+        js_file = open(input_path, "r")
+        self.row_data = js_file.read()
+        return self.row_data
 
+    def get_data(self, input_path):
+        function = re.findall(r'function\s\w+', self.row_data, re.S) + re.findall(r'function\s\w+', self.row_data, re.S)
+        var = re.findall(r'var\s\w+', self.row_data, re.S) + re.findall(r'const\s\w+', self.row_data,
+                                                                        re.S) + re.findall(r'let\s\w+', self.row_data, re.S)
+        for obj in function:
+            self.fucntion_name.append(obj.lstrip('function'))
 
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
+        for obj in var:
+            self.var_name.append(re.sub('var|const|let| ', '', obj))
+
+        return 'var: ' + str(self.var_name) + '\n' + 'function: ' + str(self.fucntion_name)
+
+# if __name__ == "__main__":
+#     a = ReadNormalFile(ReadJS())
+#     a.return_is_existent_file("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/jack_jsTest.js")
+#     print(a.return_is_existent_file("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/jack_jsTest.js"))
+#
+#     a.return_is_existent_file("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/jack_jsTest")
+#
+#     a.receive_data("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/jack_jsTest.js")
+#     print(a.receive_data("/Users/hadooper/PycharmProjects/BCDE321_Assignment2/jack_jsTest.js"))

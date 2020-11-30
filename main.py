@@ -7,11 +7,11 @@ import sys
 import subprocess
 import asyncio
 
-from read_js_template import Read_js
 from mmmmsql import add_data, show_db_info, show_db_class, show_db_method, show_db_attr, test_connection
 from validate_data import Data_to_db
 from pickler import Pickler
 from my_plot_strategy import *
+from read_js_template import *
 
 # Edan imports
 from cmd import Cmd
