@@ -11,7 +11,7 @@ from read_js import Read_js
 from mmmmsql import add_data, show_db_info, show_db_class, show_db_method, show_db_attr, test_connection
 from validate_data import Data_to_db
 from pickler import Pickler
-from my_plot import MyPlot
+from my_plot_strategy import *
 
 # Edan imports
 from cmd import Cmd
@@ -211,10 +211,39 @@ class CommandLineInterface(Cmd):
     def help_db_table_select(self):
         print(self.jloader.get_help_text('db_table_select'))
 
+
     def do_draw_chart(self, arg):
-        my_plot = MyPlot()
-        my_plot.load_from_db()
-        my_plot.draw()
+        DiagramData = diagram_data()
+        data = DiagramData.load_from_db()
+
+        try:
+            raw_data = arg.split()
+            diagram_type = raw_data[0]
+
+            if len(raw_data) == 1:
+                try:
+                    if diagram_type == '-b':
+                        diagram_creator = ImageContext(BarImageStrategy())
+                        diagram_creator.produce_image(data)
+                    elif diagram_type == '-p':
+                        diagram_creator = ImageContext(PieImageStrategy())
+                        diagram_creator.produce_image(data)
+                    else:
+                        print('The table you choose is not existed in the database,'
+                              ' please try {help table_select} to check the existed tables')
+
+                except Exception as e:
+                    print(e)
+
+            elif len(raw_data) != 1:
+                print('Only 1 argument allowed, please try {help table_select} to follow up the format')
+            else:
+                print("Please at the least entre 1 argument as an option. Try again !")
+
+        except IndexError as ie:
+            print("Please at the least entre 1 argument as an option. Try again !")
+
+
 
     def help_draw_chart(self):
         print(self.jloader.get_help_text('draw_chart'))

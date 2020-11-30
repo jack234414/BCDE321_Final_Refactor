@@ -17,6 +17,9 @@
           <option value="main.await" />
           <option value="mysql.connector" />
           <option value="list.items" />
+          <option value="super.self" />
+          <option value="super.labels" />
+          <option value="main.MyPlot" />
         </list>
       </option>
     </inspection_tool>
