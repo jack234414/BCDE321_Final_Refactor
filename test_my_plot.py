@@ -107,11 +107,19 @@ class TestMyPlot(unittest.TestCase):
         self.assertEqual(expected, actual)
 
     @patch('builtins.print')
-    def test_draw_diagram_wrong(self, mock_print):
+    def test_draw_diagram_wrong_arg(self, mock_print):
         arg = ""
         cmd = CommandLineInterface()
         actual = cmd.do_draw_chart(arg)
         expected = mock_print.assert_called_with('Please at the least entre 1 argument as an option. Try again !')
+        self.assertEqual(expected, actual)
+
+    @patch('builtins.print')
+    def test_draw_diagram(self, mock_print):
+        cmd = CommandLineInterface()
+        cmd.do_load_data("JSTest1.js")
+        actual = cmd.do_draw_chart("-b")
+        expected = mock_print.assert_called_with('Query "SELECT * from uml_resource.all_class;" processed!')
         self.assertEqual(expected, actual)
 
 
