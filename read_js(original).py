@@ -4,42 +4,6 @@ import os
 import re
 import os.path
 from os import path
-from abc import ABCMeta, abstractmethod
-
-
-class ReadFileTemplate(metaclass=ABCMeta):
-    def __init__(self):
-        self.file_name = ''
-        self.work_dir = ''
-        self.input = ''
-
-        self.fucntion_name = []
-        self.var_name = []
-        self.row_data = ''
-
-        self._file_dir = ""
-        self._file_contents = ""
-        self._clean_file_contents = ""
-
-    @abstractmethod
-    def is_existent_file(self, input_path):
-        raise NotImplementedError
-
-    @abstractmethod
-    def is_existent_path(self, input_path):
-        raise NotImplementedError
-
-    @abstractmethod
-    def read_file(self):
-        raise NotImplementedError
-
-    @abstractmethod
-    def get_data(self, input_path):
-        self._set_file_dir(new_dir)
-        self._read_file()
-        return self._clean_file_contents
-
-
 
 class Read_js:
     """doctest

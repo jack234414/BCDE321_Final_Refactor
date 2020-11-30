@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from abc import ABCMeta, abstractmethod
 
 
-class diagram_data:
+class DiagramData:
     def __init__(self):
         self.data = []
         self._loop = asyncio.get_event_loop()
@@ -19,7 +19,11 @@ class diagram_data:
         result = self._loop.run_until_complete(show_db_all(self._loop))
         self.data.append(result)
 
-        return self.data
+        if self.data is not None:
+            return self.data
+        else:
+            print('Your data did not load correctly, please check your data source!')
+
 
 class ImageContext(object):
     def __init__(self, image_strategy):
@@ -33,6 +37,7 @@ class ImageStrategy(metaclass=ABCMeta):
     @abstractmethod
     def draw_diagram(self, data):
         pass
+
 
 class BarImageStrategy(ImageStrategy):
 
@@ -51,8 +56,8 @@ class BarImageStrategy(ImageStrategy):
         for i in range(len(data[0])):
             self.attr.append(data[0][i][3])
 
-        x = np.arange(len(self.labels))  # the label locations
-        width = 0.35  # the width of the bars
+        x = np.arange(len(self.labels))
+        width = 0.35
         fig, ax = plt.subplots()
         rects1 = ax.bar(x - width / 2, self.meth, width, label='Method')
         rects2 = ax.bar(x + width / 2, self.attr, width, label='Attr')
@@ -98,11 +103,11 @@ class PieImageStrategy(ImageStrategy):
         plt.show()
 
 
-if __name__ == '__main__':
-    DiagramData = diagram_data()
-    data = DiagramData.load_from_db()
-    diagram_creator = ImageContext(BarImageStrategy())
-    diagram_creator.produce_image(data)
-
-    diagram_creator = ImageContext(PieImageStrategy())
-    diagram_creator.produce_image(data)
+# if __name__ == '__main__':
+#     diagram_data = DiagramData()
+#     data = diagram_data.load_from_db()
+#     diagram_creator = ImageContext(BarImageStrategy())
+#     diagram_creator.produce_image(data)
+#
+#     diagram_creator = ImageContext(PieImageStrategy())
+#     diagram_creator.produce_image(data)

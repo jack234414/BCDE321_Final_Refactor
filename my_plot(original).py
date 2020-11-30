@@ -86,9 +86,9 @@ class MyPlot:
 
         plt.show()
 
-if __name__ == '__main__':
-    a = MyPlot()
-    a.load_from_db()
-    # a.draw()
-
-    a.draw_pie()
+# if __name__ == '__main__':
+#     a = MyPlot()
+#     a.load_from_db()
+#     # a.draw()
+#
+#     a.draw_pie()

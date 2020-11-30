@@ -98,7 +98,6 @@ class CommandLineInterface(Cmd):
     def help_convert_to_uml(self):
         print(self.jloader.get_help_text('convert_to_uml'))
 
-
     """Jack's work above"""
     def do_EOF(self, arg):
         return True
@@ -211,10 +210,9 @@ class CommandLineInterface(Cmd):
     def help_db_table_select(self):
         print(self.jloader.get_help_text('db_table_select'))
 
-
     def do_draw_chart(self, arg):
-        DiagramData = diagram_data()
-        data = DiagramData.load_from_db()
+        diagram_data = DiagramData()
+        data = diagram_data.load_from_db()
 
         try:
             raw_data = arg.split()
@@ -240,9 +238,8 @@ class CommandLineInterface(Cmd):
             else:
                 print("Please at the least entre 1 argument as an option. Try again !")
 
-        except IndexError as ie:
+        except IndexError as e:
             print("Please at the least entre 1 argument as an option. Try again !")
-
 
 
     def help_draw_chart(self):
@@ -315,7 +312,6 @@ class CommandLineInterface(Cmd):
         Cmd.postloop(self)
         print("The application will now exit!")
 
-
     def emptyline(self):
         """Do nothing on empty input line"""
         pass
@@ -337,21 +333,3 @@ if __name__ == '__main__':
     # Jack's work (10.Exception handling)
     except KeyboardInterrupt as e:
         print("\nProgram aborted by user\n")
-
-"""
-1. Support command-line arguments
-2. Has a line-oriented command interpreter based on cmd or similar package
-3. Display command line help of available commands
-4. Change commands and options
-5. Extract data
-6. Validate data
-7. Provides object- persistence / object serialization using either pickle or shelve
-8. Can load data from a file
-9. Can deal with file directory
-10. Can raise exceptions and provide exception handling
-11. Amount of checking for pre- and post- conditions of methods
-12. Provide doctests
-13. Provide unittests
-14. Pretty print, i.e., displaying data in chart/ diagram, e.g., bar chart, pie chart, UML diagram, etc. 
-15. Can save and read data from a database, e.g., SQLite, MySQL and MongoDB 
-"""
