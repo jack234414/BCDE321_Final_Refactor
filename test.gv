@@ -1,0 +1,5 @@
+// UML Diagram
+digraph {
+	CycleLog [label="{CycleLog|this.allMyRides=[]\lthis.editedRide=null\lthis.editedRideIndex=null\lthis.beforeEditTitleCache=\"\"\lthis.beforeEditDistanceCache=\"\"\lthis.beforeEditDurationCache=\"\"|constructor()\laddRide()\lsortRides()\lgetShortRides()\lgetLongRides()\lgetRideBetweenDate()\lremoveRide()\lsave()\lload()\lstartEdit()\ldoneEdit()\lcancelEdit()\lcalculateTotalDistance()\lcalculateAverageKPH()\lfindRideTitle()\lgetAllRides()}" shape=record]
+	Ride [label="{Ride|this.title=newTitle\lthis.id=newId\lthis.date=newDate\lthis.duration=newDuration\lthis.distance=newDistance\lthis.kph=newKPH\lthis.completed=false|constructor()\lfinishedRide()\lcalculateDuration()\lcalculateKPH()}" shape=record]
+}
